@@ -1,0 +1,722 @@
+issue_type,employee_id,item,description
+missing_proficiency,NXT10553,ETL / Data Testing,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10838,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10978,Microsoft SQL Server,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10627,Agile / Scrum,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10918,Cucumber (BDD),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10546,ISO 20022,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11061,AWS Glue,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10163,Django,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10920,GraphQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10896,pandas & NumPy,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10575,Kanban,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11188,REST API Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10560,Microservices Architecture,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10255,Angular,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11444,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10346,Kotlin,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10686,Linux Administration,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11169,MySQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10784,iOS Development,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10789,Cloud Security,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11214,RabbitMQ,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10752,Microsoft Azure,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11427,Redis,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10335,Azure Data Factory,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11197,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10746,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11002,Deep Learning,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11292,REST API Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10886,Python,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10753,Capital Markets & Wealth,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11067,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10329,E-commerce,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10968,Argo CD,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10329,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10517,React,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11392,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11311,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11050,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10534,Jenkins,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11419,Lightning Web Components (LWC),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11241,Databricks,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10116,Oracle Database,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11448,JavaScript,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11431,ASP.NET Core,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11218,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10562,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10255,C#,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10928,Hadoop & Hive,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11170,REST API Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10254,MongoDB,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10140,Test Automation Framework Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11109,ASP.NET Core,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11215,MySQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11423,JavaScript,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11303,Apache Kafka,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11036,Databricks,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10569,Helm,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10569,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11103,Kubernetes,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10915,Ansible,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10868,PCI DSS,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11235,Mobile App Testing,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11216,Figma,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11280,Risk Management,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10675,Shell Scripting,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10775,Terraform,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10745,Express.js,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10170,IoT (MQTT / Edge),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10946,Agile / Scrum,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11446,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10768,Shell Scripting,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10205,Oracle Database,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10713,Amazon Web Services (AWS),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11445,Generative AI / LLMs,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10627,Manual Testing,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11047,Azure Cosmos DB,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10902,MLflow,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10812,Next.js,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11372,Apache Airflow,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11440,MySQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10787,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10634,AML & KYC,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11032,Databricks,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10043,REST API Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10674,Amazon Web Services (AWS),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11229,Apache Kafka,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10352,User Acceptance Testing (UAT),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10362,Prompt Engineering,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11206,Microsoft Azure,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11142,Core Banking,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11104,HTML5 & CSS3,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11360,Data Modeling,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10468,Vue.js,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10193,scikit-learn,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10868,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11078,E-commerce,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10779,Capital Markets & Wealth,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10686,Argo CD,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10949,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10188,Entity Framework Core,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11067,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11236,Shell Scripting,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11376,E-commerce,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10630,Databricks,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11319,PostgreSQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11272,GraphQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10983,Google Cloud Platform (GCP),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11188,ASP.NET Core,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11116,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10398,User Stories & Acceptance Criteria,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10368,Selenium WebDriver,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11007,PL/SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10172,ISO 20022,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11026,Redis,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10961,Swift,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10951,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11249,REST API Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11440,Spring Boot,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10770,ETL / Data Testing,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10784,Dart,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10963,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11175,MLflow,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10586,Cucumber (BDD),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10571,MLOps,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11157,Redis,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10941,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10647,Go,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11202,Microsoft SQL Server,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11200,C#,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10396,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11271,Insurance (P&C / Life),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11093,Amazon Web Services (AWS),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10723,Power BI,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11300,RabbitMQ,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10587,PCI DSS,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11281,Microsoft Azure,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10761,Python,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10263,scikit-learn,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10954,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11292,Jenkins,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10825,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11329,Microsoft Project,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11125,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10824,PostgreSQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11294,PCI DSS,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10510,Oracle Database,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10306,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10647,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11034,Shell Scripting,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10767,Camunda BPM,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11262,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11412,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10070,Mobile App Testing,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10354,Amazon Web Services (AWS),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11086,MySQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10583,Node.js,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11086,MongoDB,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11325,Vector Databases,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11319,GitHub Actions,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10988,Python,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10997,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11157,Elasticsearch,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10984,Manual Testing,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10730,Microservices Architecture,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10114,Confluence,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10846,PostgreSQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10381,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11010,API Testing,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10949,RabbitMQ,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11391,RabbitMQ,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11052,Linux Administration,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10713,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10347,Business Process Modeling (BPMN),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11124,Delta Lake,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11213,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10970,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10148,Payments (UPI/IMPS/NEFT),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10688,Cassandra,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11346,Microservices Architecture,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10882,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10676,Swift,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10124,Payments (UPI/IMPS/NEFT),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10612,Telecom OSS/BSS,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10415,PostgreSQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10909,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10904,Apache Kafka,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10619,Python,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10856,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10737,Insurance (P&C / Life),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10731,WebRTC,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11380,MongoDB,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10168,PL/SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11014,Salesforce Administration,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10570,ETL / Data Testing,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11352,Delta Lake,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10145,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10307,Insurance (P&C / Life),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11236,Prometheus & Grafana,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10553,Accessibility (WCAG),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11285,REST API Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10331,Spring Boot,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10557,Snowflake,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10629,Snowflake,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11277,PCI DSS,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10647,Supply Chain & Logistics,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11188,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10875,Microservices Architecture,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10695,Playwright,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10148,Delta Lake,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11409,Jira,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10797,Microsoft Azure,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10302,Playwright,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11259,DevSecOps,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11302,Postman,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10895,REST Assured,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11098,REST API Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11239,Apache Spark (PySpark),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11061,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10690,Delta Lake,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10585,Serverless (AWS Lambda / Azure Functions),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10067,Linux Administration,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10916,pandas & NumPy,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10013,Core Banking,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10738,Apache Kafka,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10900,Retrieval-Augmented Generation (RAG),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11388,Azure DevOps,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10119,Power BI,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10709,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11112,REST API Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10725,E-commerce,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10621,Entity Framework Core,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10367,Azure Machine Learning,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11336,Amazon Web Services (AWS),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11357,HL7 / FHIR,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10746,REST API Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10669,Power BI,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11446,Jenkins,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10991,Shell Scripting,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11347,User Acceptance Testing (UAT),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10663,Angular,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10802,Microsoft Azure,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10597,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10775,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10353,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10729,Apache Spark (PySpark),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11089,Azure Machine Learning,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11334,Manual Testing,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11158,Generative AI / LLMs,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11331,MySQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10510,Amazon Web Services (AWS),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11433,Apache JMeter,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10505,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11304,Test Automation Framework Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11130,Jenkins,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10043,TypeScript,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11371,Test Automation Framework Design,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11411,HTML5 & CSS3,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11062,Spring Boot,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10949,Angular,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10538,Insurance (P&C / Life),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11160,Energy & Utilities (AMI),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10485,Microsoft Fabric,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10713,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11086,E-commerce,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10784,Java,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11073,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10674,Docker,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10462,Capital Markets & Wealth,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10431,LangChain,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10464,Amazon Web Services (AWS),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11143,Data Modeling,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11241,SQL,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11062,Amazon Web Services (AWS),Proficiency left blank in the skills matrix
+missing_proficiency,NXT10009,Insurance (P&C / Life),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11238,ASP.NET Core,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11270,JUnit & Mockito,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11368,RabbitMQ,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11428,Apache Airflow,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10164,Entity Framework Core,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10686,Python,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10673,MLOps,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11124,Databricks,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10867,Data Modeling,Proficiency left blank in the skills matrix
+missing_proficiency,NXT11279,Hibernate/JPA,Proficiency left blank in the skills matrix
+missing_proficiency,NXT10951,Payments (UPI/IMPS/NEFT),Proficiency left blank in the skills matrix
+missing_proficiency,NXT11272,Microsoft Azure,Proficiency left blank in the skills matrix
+claimed_not_evidenced,NXT10802,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11134,Splunk / SIEM,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11397,Business Process Modeling (BPMN),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11374,PL/SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10838,Apache Spark (PySpark),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11375,LangChain,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10824,Oracle Database,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11182,HTML5 & CSS3,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11301,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11359,MySQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11248,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10750,Jenkins,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11358,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10722,Figma,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10966,Jira,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10290,Snowflake,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11309,React,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11109,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11336,Camunda BPM,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11373,Ansible,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11364,NestJS,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11427,RabbitMQ,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11359,Hibernate/JPA,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11395,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11373,Argo CD,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10005,Power BI,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11319,Linux Administration,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11367,Postman,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11106,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11248,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11299,Oracle Database,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10937,Terraform,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11188,TypeScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10799,GraphQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11397,Confluence,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11257,Cypress,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10822,Apache Kafka,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10852,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11276,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11219,Python,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10802,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10971,SwiftUI,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10319,Apache Airflow,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10334,Terraform,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10786,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11299,Kotlin,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10793,Risk Management,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11098,Jetpack Compose,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11231,Requirements Elicitation,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11396,Postman,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11426,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11354,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10392,Retrieval-Augmented Generation (RAG),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11224,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11355,Kotlin,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11015,Mobile App Testing,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11426,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10353,gRPC,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11235,Jira,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11394,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10540,LangChain,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10848,ELK Stack,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11092,PostgreSQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11412,TestNG,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10872,Cassandra,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11117,Time Series Forecasting,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10231,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11155,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10483,Java,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11047,Serverless (AWS Lambda / Azure Functions),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10188,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11377,Apache Spark (PySpark),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11365,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11077,Oracle Database,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11290,Cloud Security,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10381,Accessibility (WCAG),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11238,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11211,Angular,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10116,Generative AI / LLMs,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10718,pandas & NumPy,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11288,Tailwind CSS,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10362,Microsoft Azure,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11307,PL/SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11196,R,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11352,Power BI,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11103,Go,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10656,TypeScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10963,GitLab CI/CD,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11043,Azure Machine Learning,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10834,Google Cloud Platform (GCP),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10244,Jira,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10400,Terraform,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10400,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10892,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11445,Databricks,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11444,User Acceptance Testing (UAT),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11136,Accessibility (WCAG),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10188,Kubernetes,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10682,RabbitMQ,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10081,Jira,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11300,Camunda BPM,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10172,Elasticsearch,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11028,Hadoop & Hive,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10164,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11283,PostgreSQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11445,TensorFlow,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11311,Go,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11405,Linux Administration,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10255,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11186,OpenShift,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10786,Kubernetes,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10733,MongoDB,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11357,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10954,Apache Kafka,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10668,MySQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10656,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11318,Python,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11445,MLOps,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11050,Informatica PowerCenter,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11404,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10978,Apache Kafka,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10170,Flask,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10998,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11445,Prompt Engineering,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11033,PL/SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11352,PostgreSQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10799,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10141,Figma,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10828,MLflow,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11282,Apache Airflow,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11270,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10973,TypeScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11343,Microsoft Azure,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11130,Kubernetes,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10957,Redux,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10916,Statistics & Probability,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11444,ETL / Data Testing,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10140,Jira,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11366,React,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11425,Serverless (AWS Lambda / Azure Functions),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10746,Microsoft Azure,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11424,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11275,React,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11355,MySQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11166,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10760,PL/SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11021,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11270,Go,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10505,PostgreSQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11249,Django,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11121,Jira,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10122,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10646,Hibernate/JPA,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10449,Delta Lake,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10690,Microsoft SQL Server,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11386,Statistics & Probability,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11230,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10991,Splunk / SIEM,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11321,Amazon SageMaker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11063,Shell Scripting,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10970,Playwright,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10179,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11334,API Testing,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11139,PostgreSQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11082,Power BI,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10023,Serverless (AWS Lambda / Azure Functions),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10998,Jenkins,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10900,Amazon SageMaker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11346,JUnit & Mockito,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10702,Power BI,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10472,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11369,Jira,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11351,Kubernetes,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10400,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11449,Linux Administration,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11318,Snowflake,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10124,C#,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10838,Natural Language Processing (NLP),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11312,Power BI,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11226,Apache Kafka,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10835,Postman,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11033,Hibernate/JPA,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10828,Azure Machine Learning,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10961,GraphQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10941,JUnit & Mockito,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10516,ETL/ELT Development,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11208,Postman,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10738,Jenkins,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11383,PostgreSQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10663,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11379,Data Modeling,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10362,Operations Research / Optimization,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10627,Test Automation Framework Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10976,Cypress,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11292,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11179,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10249,TypeScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10730,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11438,Jenkins,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10669,Generative AI / LLMs,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10034,Kubernetes,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11407,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11158,Kubernetes,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11288,GraphQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11163,Mobile App Testing,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10916,Machine Learning,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10705,OpenShift,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11137,TypeScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11205,Microsoft Azure,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10021,Kotlin,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11012,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10619,MLflow,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11295,Camunda BPM,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10909,Jira,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11310,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10992,MySQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10575,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11381,SAFe,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11331,Kubernetes,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11364,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11441,ITIL / Incident Management,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10834,PyTorch,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10949,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11389,Azure DevOps,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11260,Amazon SageMaker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11199,Angular,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11130,Go,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11268,OpenShift,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11440,Hibernate/JPA,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11297,Shell Scripting,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11204,GraphQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11275,Redux,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10985,Wireframing & Prototyping,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11439,ELK Stack,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10704,WebRTC,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11162,Elasticsearch,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11214,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11284,PL/SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10992,TypeScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10842,pandas & NumPy,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10920,Jest,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11359,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11417,PostgreSQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11324,Snowflake,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11373,Jenkins,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11001,Linux Administration,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10005,HTML5 & CSS3,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11375,TensorFlow,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11010,ETL / Data Testing,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11356,Delta Lake,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11443,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11075,RabbitMQ,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10193,MLflow,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11384,Terraform,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10988,Splunk / SIEM,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11171,Apache Kafka,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10460,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10846,MLflow,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11386,PyTorch,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11346,Spring Boot,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11394,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11280,Selenium WebDriver,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10776,Spring Cloud,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11171,Hadoop & Hive,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10793,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11429,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10753,Delta Lake,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11277,MySQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11392,MongoDB,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11403,TypeScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10563,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11301,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11178,Stakeholder Management,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10706,Kubernetes,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11073,Databricks,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11363,Wireframing & Prototyping,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11248,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11234,ISO 27001 & Compliance,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11002,Machine Learning,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10073,SAFe,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11442,TypeScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11035,Redux,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11267,ELK Stack,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11413,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11366,JUnit & Mockito,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11122,ISO 27001 & Compliance,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10621,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10953,Design Systems,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11067,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10798,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10302,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10999,Scala,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11406,Entity Framework Core,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10852,Serverless (AWS Lambda / Azure Functions),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10737,RabbitMQ,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11346,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11221,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11315,ETL / Data Testing,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10879,Swift,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10838,Recommendation Systems,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10868,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10986,Delta Lake,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11242,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11429,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11137,REST API Design,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10928,Apache Kafka,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11333,Apache Kafka,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11331,Microservices Architecture,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10997,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11402,SQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10862,Redux,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10546,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10524,Amazon Web Services (AWS),Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11162,Snowflake,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11403,Postman,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11078,Design Systems,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10167,Postman,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10612,OWASP Top 10,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10164,Redis,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10529,Docker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11273,Jira,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11345,Django,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10782,ITIL / Incident Management,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11255,Power BI,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10609,Wireframing & Prototyping,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10930,Apache JMeter,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10034,Go,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11417,Redis,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10193,Amazon SageMaker,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11223,Python,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10939,Stakeholder Management,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11438,Java,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10043,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10834,Azure Machine Learning,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11281,Node.js,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11165,JavaScript,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11249,PostgreSQL,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10667,Azure DevOps,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10673,FastAPI,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10989,Recommendation Systems,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11084,Microsoft SQL Server,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT10478,Jenkins,Self-declared expert level with no project evidence and no manager verification
+claimed_not_evidenced,NXT11398,SQL,Self-declared expert level with no project evidence and no manager verification
+skill_years_exceed_experience,NXT10540,Power BI,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11432,REST API Design,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11079,Hadoop & Hive,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10997,Docker,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10729,AML & KYC,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10818,Microsoft Azure,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10654,Apache Kafka,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11112,Flutter,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10081,Supply Chain & Logistics,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10302,Supply Chain & Logistics,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10249,Appium,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11274,API Testing,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11375,LangChain,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11023,MLflow,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11263,Core Banking,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10673,Databricks,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11056,C#,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10796,API Testing,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11301,Salesforce Service Cloud,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10686,Python,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10347,Telecom OSS/BSS,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11290,GitLab CI/CD,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11256,Entity Framework Core,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11393,Oracle Database,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10808,Databricks,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10015,Microservices Architecture,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10915,Python,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11400,Wireframing & Prototyping,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10581,REST API Design,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10788,ISO 20022,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10547,Azure DevOps,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10390,SAFe,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10483,User Stories & Acceptance Criteria,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11297,Amazon Web Services (AWS),Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11390,SQL,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10751,Agile / Scrum,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11303,Kubernetes,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10802,C#,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11111,Apache Kafka,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11247,Azure Data Factory,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11275,TypeScript,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11111,Hibernate/JPA,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10975,API Testing,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11050,Scala,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11353,Amazon Web Services (AWS),Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11000,Agile / Scrum,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10869,Payments (UPI/IMPS/NEFT),Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11100,Data Modeling,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11023,SQL,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11365,Docker,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10886,Lending & Loan Origination,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11336,Terraform,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11241,Python,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10985,UX Research,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10145,Python,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11324,Google BigQuery,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11075,Angular,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10329,Team Leadership,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10963,Microsoft Azure,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10529,Spring Boot,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11378,Entity Framework Core,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11112,Accessibility (WCAG),Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11098,Jetpack Compose,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11124,Databricks,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10208,Apache Kafka,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10483,Power BI,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT11210,Microsoft Azure,Years of skill use is greater than total career experience
+skill_years_exceed_experience,NXT10597,GitHub Actions,Years of skill use is greater than total career experience
+experience_inconsistent,NXT10968,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT10674,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT10852,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT10610,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT11076,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT10985,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT11191,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT11310,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT10856,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT10944,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT10510,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT11373,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT10959,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT10563,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT11070,total_experience_years,Recorded total experience is lower than tenure at Nexora
+experience_inconsistent,NXT11279,total_experience_years,Recorded total experience is lower than tenure at Nexora
+cert_dates_swapped,NXT11052,AWS-SAA,Issue date is after expiry date (data-entry error)
+cert_dates_swapped,NXT10873,AWS-DVA,Issue date is after expiry date (data-entry error)
+cert_dates_swapped,NXT10914,AZ-104,Issue date is after expiry date (data-entry error)
+cert_dates_swapped,NXT10421,AZ-204,Issue date is after expiry date (data-entry error)
+missing_email,NXT11012,email,No email on record - notification cannot be sent
+missing_email,NXT11206,email,No email on record - notification cannot be sent
+missing_email,NXT11237,email,No email on record - notification cannot be sent
+missing_email,NXT10306,email,No email on record - notification cannot be sent

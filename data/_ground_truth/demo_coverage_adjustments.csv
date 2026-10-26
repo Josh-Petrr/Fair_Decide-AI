@@ -1,0 +1,756 @@
+kind,employee_id,project_role_id,detail
+planned_roll_off,NXT10505,PR04127,assignment on PRJ0704 ends before 2026-11-10
+planned_roll_off,NXT10396,PR04127,assignment on PRJ0655 ends before 2026-11-10
+planned_roll_off,NXT10193,PR04127,assignment on PRJ0674 ends before 2026-11-10
+planned_roll_off,NXT11002,PR04127,assignment on PRJ0649 ends before 2026-11-10
+skill,NXT10263,PR04127,Time Series Forecasting>=3
+skill,NXT11445,PR04127,Time Series Forecasting>=3
+skill,NXT10193,PR04127,Time Series Forecasting>=3
+skill,NXT10649,PR04127,Machine Learning>=3
+skill,NXT10649,PR04127,Time Series Forecasting>=3
+skill,NXT10713,PR04127,Machine Learning>=3
+skill,NXT10713,PR04127,Time Series Forecasting>=3
+skill,NXT10505,PR04127,Machine Learning>=3
+skill,NXT10505,PR04127,Time Series Forecasting>=3
+skill,NXT10396,PR04127,Machine Learning>=3
+skill,NXT10396,PR04127,Time Series Forecasting>=3
+skill,NXT11002,PR04127,Machine Learning>=3
+skill,NXT11002,PR04127,Time Series Forecasting>=3
+skill,NXT10838,PR04128,pandas & NumPy>=2
+skill,NXT11002,PR04128,pandas & NumPy>=2
+skill,NXT11445,PR04128,pandas & NumPy>=2
+skill,NXT10505,PR04128,pandas & NumPy>=2
+skill,NXT10825,PR04129,Microsoft Azure>=3
+skill,NXT11068,PR04129,Microsoft Azure>=3
+skill,NXT10193,PR04129,Microsoft Azure>=3
+skill,NXT10263,PR04129,Apache Spark (PySpark)>=3
+skill,NXT10838,PR04129,Microsoft Azure>=3
+planned_roll_off,NXT10957,PR04134,assignment on PRJ0707 ends before 2026-11-15
+planned_roll_off,NXT10534,PR04134,assignment on PRJ0705 ends before 2026-11-15
+planned_roll_off,NXT10400,PR04134,assignment on PRJ0699 ends before 2026-11-15
+skill,NXT10013,PR04134,Microservices Architecture>=4
+skill,NXT10877,PR04134,Microservices Architecture>=4
+skill,NXT10893,PR04134,Microservices Architecture>=4
+skill,NXT10254,PR04134,Java>=4
+skill,NXT10254,PR04134,Spring Boot>=4
+skill,NXT10254,PR04134,Microservices Architecture>=4
+skill,NXT10957,PR04134,Java>=4
+skill,NXT10957,PR04134,Spring Boot>=4
+skill,NXT10957,PR04134,Microservices Architecture>=4
+skill,NXT10953,PR04136,Angular>=2
+planned_roll_off,NXT11362,PR04137,assignment on PRJ0638 ends before 2026-11-15
+planned_roll_off,NXT10239,PR04137,assignment on PRJ0662 ends before 2026-11-15
+planned_roll_off,NXT11326,PR04137,assignment on PRJ0652 ends before 2026-11-15
+planned_roll_off,NXT10609,PR04137,assignment on PRJ0667 ends before 2026-11-15
+planned_roll_off,NXT11182,PR04137,assignment on PRJ0570 ends before 2026-11-15
+skill,NXT10985,PR04137,UI Design>=3
+planned_roll_off,NXT11412,PR04138,assignment on PRJ0660 ends before 2026-11-15
+planned_roll_off,NXT11433,PR04138,assignment on PRJ0693 ends before 2026-11-15
+skill,NXT10462,PR04138,Java>=2
+skill,NXT10462,PR04138,TestNG>=2
+skill,NXT10975,PR04138,Selenium WebDriver>=2
+skill,NXT10975,PR04138,TestNG>=2
+skill,NXT11433,PR04138,Java>=2
+skill,NXT11433,PR04138,TestNG>=2
+skill,NXT11403,PR04138,Selenium WebDriver>=2
+skill,NXT11403,PR04138,Java>=2
+skill,NXT11403,PR04138,TestNG>=2
+skill,NXT11412,PR04138,Selenium WebDriver>=2
+skill,NXT11412,PR04138,Java>=2
+skill,NXT11412,PR04138,TestNG>=2
+planned_roll_off,NXT11294,PR04139,assignment on PRJ0582 ends before 2026-11-15
+planned_roll_off,NXT11294,PR04139,assignment on PRJ0715 ends before 2026-11-15
+planned_roll_off,NXT11294,PR04139,assignment on PRJ0720 ends before 2026-11-15
+planned_roll_off,NXT10793,PR04139,assignment on PRJ0432 ends before 2026-11-15
+planned_roll_off,NXT10483,PR04139,assignment on PRJ0629 ends before 2026-11-15
+planned_roll_off,NXT10483,PR04139,assignment on PRJ0650 ends before 2026-11-15
+planned_roll_off,NXT10483,PR04139,assignment on PRJ0704 ends before 2026-11-15
+planned_roll_off,NXT10483,PR04139,assignment on PRJ0705 ends before 2026-11-15
+planned_roll_off,NXT10390,PR04139,assignment on PRJ0565 ends before 2026-11-15
+planned_roll_off,NXT10390,PR04139,assignment on PRJ0691 ends before 2026-11-15
+planned_roll_off,NXT10390,PR04139,assignment on PRJ0721 ends before 2026-11-15
+planned_roll_off,NXT10779,PR04139,assignment on PRJ0619 ends before 2026-11-15
+planned_roll_off,NXT10779,PR04139,assignment on PRJ0670 ends before 2026-11-15
+planned_roll_off,NXT10779,PR04139,assignment on PRJ0710 ends before 2026-11-15
+skill,NXT10702,PR04139,Requirements Elicitation>=3
+skill,NXT11096,PR04139,Capital Markets & Wealth>=2
+skill,NXT10398,PR04139,Capital Markets & Wealth>=2
+skill,NXT10793,PR04139,Capital Markets & Wealth>=2
+skill,NXT10390,PR04139,Requirements Elicitation>=3
+skill,NXT11294,PR04139,Requirements Elicitation>=3
+skill,NXT11294,PR04139,Capital Markets & Wealth>=2
+skill,NXT10483,PR04139,Requirements Elicitation>=3
+skill,NXT10483,PR04139,Capital Markets & Wealth>=2
+skill,NXT10779,PR04139,Requirements Elicitation>=3
+skill,NXT10779,PR04139,Capital Markets & Wealth>=2
+planned_roll_off,NXT11081,PR04142,assignment on PRJ0629 ends before 2026-11-17
+planned_roll_off,NXT10960,PR04142,assignment on PRJ0509 ends before 2026-11-17
+planned_roll_off,NXT10368,PR04142,assignment on PRJ0618 ends before 2026-11-17
+planned_roll_off,NXT10368,PR04142,assignment on PRJ0620 ends before 2026-11-17
+planned_roll_off,NXT10553,PR04142,assignment on PRJ0623 ends before 2026-11-17
+skill,NXT10539,PR04142,Performance Testing>=3
+skill,NXT10539,PR04142,Apache JMeter>=3
+skill,NXT11403,PR04142,Performance Testing>=3
+skill,NXT11403,PR04142,Apache JMeter>=3
+skill,NXT11433,PR04142,Performance Testing>=3
+skill,NXT11433,PR04142,Apache JMeter>=3
+skill,NXT11081,PR04142,Performance Testing>=3
+skill,NXT11081,PR04142,Apache JMeter>=3
+skill,NXT10960,PR04142,Performance Testing>=3
+skill,NXT10960,PR04142,Apache JMeter>=3
+skill,NXT10368,PR04142,Performance Testing>=3
+skill,NXT10368,PR04142,Apache JMeter>=3
+skill,NXT10553,PR04142,Performance Testing>=3
+skill,NXT10553,PR04142,Apache JMeter>=3
+planned_roll_off,NXT10818,PR04144,assignment on PRJ0700 ends before 2026-11-17
+planned_roll_off,NXT10818,PR04144,assignment on PRJ0700 ends before 2026-11-17
+planned_roll_off,NXT10674,PR04144,assignment on PRJ0662 ends before 2026-11-17
+planned_roll_off,NXT10674,PR04144,assignment on PRJ0686 ends before 2026-11-17
+planned_roll_off,NXT10674,PR04144,assignment on PRJ0701 ends before 2026-11-17
+planned_roll_off,NXT11297,PR04144,assignment on PRJ0610 ends before 2026-11-17
+planned_roll_off,NXT11297,PR04144,assignment on PRJ0721 ends before 2026-11-17
+planned_roll_off,NXT10394,PR04144,assignment on PRJ0585 ends before 2026-11-17
+planned_roll_off,NXT11449,PR04144,assignment on PRJ0717 ends before 2026-11-17
+planned_roll_off,NXT10734,PR04144,assignment on PRJ0704 ends before 2026-11-17
+planned_roll_off,NXT10585,PR04144,assignment on PRJ0629 ends before 2026-11-17
+planned_roll_off,NXT10585,PR04144,assignment on PRJ0702 ends before 2026-11-17
+planned_roll_off,NXT10647,PR04144,assignment on PRJ0709 ends before 2026-11-17
+planned_roll_off,NXT10963,PR04144,assignment on PRJ0698 ends before 2026-11-17
+planned_roll_off,NXT10963,PR04144,assignment on PRJ0700 ends before 2026-11-17
+skill,NXT10818,PR04144,Prometheus & Grafana>=3
+skill,NXT10394,PR04144,Prometheus & Grafana>=3
+skill,NXT10647,PR04144,Prometheus & Grafana>=3
+skill,NXT10647,PR04144,Linux Administration>=3
+skill,NXT10193,PR04145,Operations Research / Optimization>=3
+skill,NXT10263,PR04145,Operations Research / Optimization>=3
+skill,NXT11002,PR04145,Operations Research / Optimization>=3
+skill,NXT11445,PR04145,Operations Research / Optimization>=3
+skill,NXT10396,PR04145,Operations Research / Optimization>=3
+skill,NXT10505,PR04145,Operations Research / Optimization>=3
+skill,NXT10713,PR04145,Operations Research / Optimization>=3
+skill,NXT10415,PR04145,Machine Learning>=3
+skill,NXT10415,PR04145,Operations Research / Optimization>=3
+skill,NXT10263,PR04146,Statistics & Probability>=2
+skill,NXT10838,PR04146,Statistics & Probability>=2
+skill,NXT11002,PR04146,Statistics & Probability>=2
+skill,NXT11445,PR04146,Statistics & Probability>=2
+skill,NXT10396,PR04146,Statistics & Probability>=2
+planned_roll_off,NXT10351,PR04151,assignment on PRJ0616 ends before 2026-11-26
+planned_roll_off,NXT10351,PR04151,assignment on PRJ0669 ends before 2026-11-26
+planned_roll_off,NXT10351,PR04151,assignment on PRJ0711 ends before 2026-11-26
+planned_roll_off,NXT11271,PR04151,assignment on PRJ0668 ends before 2026-11-26
+planned_roll_off,NXT10914,PR04151,assignment on PRJ0721 ends before 2026-11-26
+planned_roll_off,NXT11191,PR04151,assignment on PRJ0614 ends before 2026-11-26
+planned_roll_off,NXT11191,PR04151,assignment on PRJ0698 ends before 2026-11-26
+cert,NXT11191,PR04151,AWS-SAA
+skill,NXT10585,PR04151,Amazon Web Services (AWS)>=4
+cert,NXT10585,PR04151,AWS-SAA
+skill,NXT10647,PR04151,Amazon Web Services (AWS)>=4
+cert,NXT10647,PR04151,AWS-SAA
+skill,NXT10351,PR04151,Amazon Web Services (AWS)>=4
+cert,NXT10351,PR04151,AWS-SAA
+skill,NXT11271,PR04151,Amazon Web Services (AWS)>=4
+skill,NXT11271,PR04151,Terraform>=4
+cert,NXT11271,PR04151,AWS-SAA
+cert,NXT10394,PR04152,AWS-SAA
+cert,NXT10674,PR04152,AWS-SAA
+cert,NXT10818,PR04152,AWS-SAA
+cert,NXT10963,PR04152,AWS-SAA
+skill,NXT10324,PR04153,PostgreSQL>=3
+skill,NXT10630,PR04153,Oracle Database>=3
+planned_roll_off,NXT10982,PR04156,assignment on PRJ0664 ends before 2026-12-01
+planned_roll_off,NXT10982,PR04156,assignment on PRJ0670 ends before 2026-12-01
+planned_roll_off,NXT10419,PR04156,assignment on PRJ0663 ends before 2026-12-01
+planned_roll_off,NXT10419,PR04156,assignment on PRJ0710 ends before 2026-12-01
+planned_roll_off,NXT10789,PR04156,assignment on PRJ0672 ends before 2026-12-01
+planned_roll_off,NXT10988,PR04156,assignment on PRJ0627 ends before 2026-12-01
+planned_roll_off,NXT10988,PR04156,assignment on PRJ0641 ends before 2026-12-01
+skill,NXT10988,PR04156,Application Security>=4
+skill,NXT10988,PR04156,Penetration Testing>=4
+skill,NXT10988,PR04156,DevSecOps>=4
+planned_roll_off,NXT10923,PR04157,assignment on PRJ0692 ends before 2026-12-01
+planned_roll_off,NXT10974,PR04157,assignment on PRJ0627 ends before 2026-12-01
+planned_roll_off,NXT10943,PR04157,assignment on PRJ0669 ends before 2026-12-01
+planned_roll_off,NXT10943,PR04157,assignment on PRJ0707 ends before 2026-12-01
+planned_roll_off,NXT11134,PR04157,assignment on PRJ0666 ends before 2026-12-01
+skill,NXT10974,PR04157,Penetration Testing>=2
+cert,NXT10974,PR04157,CEH
+skill,NXT10943,PR04157,Penetration Testing>=2
+cert,NXT10943,PR04157,CEH
+skill,NXT10988,PR04157,Burp Suite>=2
+skill,NXT10988,PR04157,OWASP Top 10>=2
+cert,NXT10988,PR04157,CEH
+skill,NXT11134,PR04157,Burp Suite>=2
+skill,NXT11134,PR04157,OWASP Top 10>=2
+cert,NXT11134,PR04157,CEH
+skill,NXT10585,PR04158,DevSecOps>=3
+skill,NXT10674,PR04158,DevSecOps>=3
+skill,NXT10914,PR04158,DevSecOps>=3
+skill,NXT10963,PR04158,DevSecOps>=3
+skill,NXT11191,PR04158,DevSecOps>=3
+skill,NXT11271,PR04158,Jenkins>=3
+planned_roll_off,NXT10067,PR04160,assignment on PRJ0700 ends before 2026-12-03
+skill,NXT10585,PR04160,Azure DevOps>=4
+skill,NXT10914,PR04160,Microsoft Azure>=4
+skill,NXT10914,PR04160,Azure DevOps>=4
+skill,NXT11191,PR04160,Microsoft Azure>=4
+skill,NXT11191,PR04160,Azure DevOps>=4
+skill,NXT10067,PR04160,Microsoft Azure>=4
+skill,NXT10067,PR04160,Azure DevOps>=4
+cert,NXT10067,PR04161,AZ-104
+cert,NXT10351,PR04161,AZ-104
+cert,NXT10394,PR04161,AZ-104
+cert,NXT10585,PR04161,AZ-104
+cert,NXT10647,PR04161,AZ-104
+cert,NXT10914,PR04161,AZ-104
+cert,NXT10963,PR04161,AZ-104
+cert,NXT11191,PR04161,AZ-104
+cert,NXT11271,PR04161,AZ-104
+skill,NXT10818,PR04161,Azure DevOps>=2
+cert,NXT10818,PR04161,AZ-104
+skill,NXT11297,PR04161,Azure DevOps>=2
+cert,NXT11297,PR04161,AZ-104
+planned_roll_off,NXT10655,PR04162,assignment on PRJ0673 ends before 2026-12-03
+planned_roll_off,NXT10655,PR04162,assignment on PRJ0676 ends before 2026-12-03
+planned_roll_off,NXT10655,PR04162,assignment on PRJ0691 ends before 2026-12-03
+planned_roll_off,NXT11131,PR04162,assignment on PRJ0663 ends before 2026-12-03
+planned_roll_off,NXT11131,PR04162,assignment on PRJ0722 ends before 2026-12-03
+planned_roll_off,NXT10991,PR04162,assignment on PRJ0616 ends before 2026-12-03
+planned_roll_off,NXT10991,PR04162,assignment on PRJ0722 ends before 2026-12-03
+skill,NXT11131,PR04162,Microsoft Azure>=3
+skill,NXT10655,PR04162,Cloud Security>=3
+skill,NXT10655,PR04162,Microsoft Azure>=3
+skill,NXT10789,PR04162,Cloud Security>=3
+skill,NXT10789,PR04162,Identity & Access Management (IAM)>=3
+skill,NXT10789,PR04162,Microsoft Azure>=3
+skill,NXT10982,PR04162,Cloud Security>=3
+skill,NXT10982,PR04162,Identity & Access Management (IAM)>=3
+skill,NXT10982,PR04162,Microsoft Azure>=3
+skill,NXT11052,PR04165,Linux Administration>=2
+cert,NXT11052,PR04165,AWS-SAA
+skill,NXT11449,PR04165,Amazon Web Services (AWS)>=2
+cert,NXT11449,PR04165,AWS-SAA
+skill,NXT10396,PR04169,REST API Design>=3
+skill,NXT10415,PR04169,FastAPI>=3
+skill,NXT10505,PR04169,PostgreSQL>=3
+skill,NXT10713,PR04169,FastAPI>=3
+skill,NXT10263,PR04169,REST API Design>=3
+skill,NXT10263,PR04169,PostgreSQL>=3
+skill,NXT10362,PR04169,REST API Design>=3
+skill,NXT10362,PR04169,PostgreSQL>=3
+skill,NXT11445,PR04169,REST API Design>=3
+skill,NXT11445,PR04169,PostgreSQL>=3
+skill,NXT10193,PR04171,Computer Vision>=3
+skill,NXT10263,PR04171,Computer Vision>=3
+skill,NXT10838,PR04171,Computer Vision>=3
+skill,NXT10947,PR04171,Computer Vision>=3
+skill,NXT11002,PR04171,Computer Vision>=3
+skill,NXT10362,PR04171,Computer Vision>=3
+skill,NXT10362,PR04171,Deep Learning>=3
+skill,NXT10538,PR04172,React>=2
+skill,NXT11240,PR04172,React>=2
+skill,NXT10702,PR04174,AML & KYC>=2
+skill,NXT11369,PR04174,AML & KYC>=2
+skill,NXT10398,PR04174,AML & KYC>=2
+skill,NXT10779,PR04174,AML & KYC>=2
+skill,NXT10396,PR04177,Microservices Architecture>=3
+skill,NXT10415,PR04177,Microservices Architecture>=3
+skill,NXT10431,PR04177,Microservices Architecture>=3
+skill,NXT10713,PR04177,Microservices Architecture>=3
+skill,NXT10263,PR04177,Microservices Architecture>=3
+skill,NXT10362,PR04177,Microservices Architecture>=3
+skill,NXT11445,PR04177,Microservices Architecture>=3
+skill,NXT10396,PR04183,Generative AI / LLMs>=3
+skill,NXT10396,PR04183,Retrieval-Augmented Generation (RAG)>=3
+skill,NXT10415,PR04183,Retrieval-Augmented Generation (RAG)>=3
+skill,NXT10415,PR04183,LangChain>=3
+skill,NXT10193,PR04183,Generative AI / LLMs>=3
+skill,NXT10193,PR04183,Retrieval-Augmented Generation (RAG)>=3
+skill,NXT10193,PR04183,LangChain>=3
+skill,NXT10362,PR04183,Generative AI / LLMs>=3
+skill,NXT10362,PR04183,Retrieval-Augmented Generation (RAG)>=3
+skill,NXT10362,PR04183,LangChain>=3
+skill,NXT11445,PR04183,Generative AI / LLMs>=3
+skill,NXT11445,PR04183,Retrieval-Augmented Generation (RAG)>=3
+skill,NXT11445,PR04183,LangChain>=3
+skill,NXT10431,PR04183,Generative AI / LLMs>=3
+skill,NXT10431,PR04183,Retrieval-Augmented Generation (RAG)>=3
+skill,NXT10431,PR04183,LangChain>=3
+skill,NXT10193,PR04184,Prompt Engineering>=2
+skill,NXT10263,PR04184,Prompt Engineering>=2
+skill,NXT10362,PR04184,Prompt Engineering>=2
+skill,NXT10419,PR04190,Cloud Security>=4
+skill,NXT10789,PR04190,Identity & Access Management (IAM)>=4
+skill,NXT10789,PR04190,Cloud Security>=4
+skill,NXT10982,PR04190,Identity & Access Management (IAM)>=4
+skill,NXT10982,PR04190,Cloud Security>=4
+skill,NXT11028,PR04194,Data Modeling>=4
+skill,NXT10119,PR04194,Azure Data Factory>=4
+skill,NXT10119,PR04194,Databricks>=4
+skill,NXT10290,PR04194,Azure Data Factory>=4
+skill,NXT10290,PR04194,Databricks>=4
+skill,NXT10570,PR04194,Azure Data Factory>=4
+skill,NXT10570,PR04194,SQL>=4
+skill,NXT10825,PR04194,Azure Data Factory>=4
+skill,NXT10825,PR04194,Data Modeling>=4
+skill,NXT11307,PR04194,Azure Data Factory>=4
+skill,NXT11307,PR04194,Databricks>=4
+skill,NXT10362,PR04194,Azure Data Factory>=4
+skill,NXT10362,PR04194,Data Modeling>=4
+skill,NXT10324,PR04194,Azure Data Factory>=4
+skill,NXT10324,PR04194,Databricks>=4
+skill,NXT10324,PR04194,Data Modeling>=4
+skill,NXT10119,PR04195,Apache Spark (PySpark)>=2
+skill,NXT10335,PR04195,Azure Data Factory>=2
+skill,NXT10702,PR04197,Supply Chain & Logistics>=2
+skill,NXT11096,PR04197,Supply Chain & Logistics>=2
+skill,NXT11369,PR04197,Supply Chain & Logistics>=2
+skill,NXT10793,PR04197,Supply Chain & Logistics>=2
+skill,NXT10909,PR04197,Supply Chain & Logistics>=2
+planned_roll_off,NXT11446,PR04203,assignment on PRJ0715 ends before 2026-12-21
+planned_roll_off,NXT11274,PR04203,assignment on PRJ0585 ends before 2026-12-21
+planned_roll_off,NXT10249,PR04203,assignment on PRJ0632 ends before 2026-12-21
+skill,NXT11081,PR04203,Test Automation Framework Design>=4
+skill,NXT11433,PR04203,Test Automation Framework Design>=4
+skill,NXT11274,PR04203,Test Automation Framework Design>=4
+skill,NXT10462,PR04203,Test Automation Framework Design>=4
+skill,NXT10462,PR04203,Selenium WebDriver>=4
+skill,NXT10539,PR04203,Test Automation Framework Design>=4
+skill,NXT10539,PR04203,Selenium WebDriver>=4
+skill,NXT11446,PR04203,Test Automation Framework Design>=4
+skill,NXT11446,PR04203,Selenium WebDriver>=4
+skill,NXT10249,PR04203,Test Automation Framework Design>=4
+skill,NXT10249,PR04203,Selenium WebDriver>=4
+skill,NXT10960,PR04203,Test Automation Framework Design>=4
+skill,NXT10960,PR04203,Selenium WebDriver>=4
+skill,NXT10960,PR04203,API Testing>=4
+skill,NXT10249,PR04204,TestNG>=2
+skill,NXT10791,PR04204,TestNG>=2
+skill,NXT10930,PR04204,TestNG>=2
+skill,NXT10960,PR04204,Java>=2
+skill,NXT11081,PR04204,TestNG>=2
+skill,NXT10386,PR04204,Java>=2
+skill,NXT10386,PR04204,TestNG>=2
+skill,NXT10695,PR04204,Java>=2
+skill,NXT10695,PR04204,TestNG>=2
+skill,NXT11446,PR04204,Java>=2
+skill,NXT11446,PR04204,TestNG>=2
+skill,NXT10553,PR04205,Appium>=2
+skill,NXT10324,PR04221,Power BI>=3
+skill,NXT10335,PR04221,Power BI>=3
+skill,NXT10570,PR04221,Power BI>=3
+skill,NXT10702,PR04223,Power BI>=3
+skill,NXT11096,PR04223,Power BI>=3
+skill,NXT11369,PR04223,Power BI>=3
+skill,NXT10390,PR04223,Power BI>=3
+skill,NXT10398,PR04223,Power BI>=3
+skill,NXT10483,PR04223,Power BI>=3
+cert,NXT10394,PR04230,AZ-104
+cert,NXT10963,PR04230,AZ-104
+planned_roll_off,NXT10137,PR04240,assignment on PRJ0628 ends before 2027-01-12
+planned_roll_off,NXT11416,PR04240,assignment on PRJ0670 ends before 2027-01-12
+skill,NXT10013,PR04240,Apache Kafka>=4
+skill,NXT11303,PR04240,Kubernetes>=4
+skill,NXT10137,PR04240,Kubernetes>=4
+skill,NXT10212,PR04240,Apache Kafka>=4
+skill,NXT10212,PR04240,Kubernetes>=4
+skill,NXT10646,PR04240,Apache Kafka>=4
+skill,NXT10646,PR04240,Kubernetes>=4
+skill,NXT10893,PR04240,Apache Kafka>=4
+skill,NXT10893,PR04240,Kubernetes>=4
+skill,NXT11416,PR04240,Microservices Architecture>=4
+skill,NXT11416,PR04240,Apache Kafka>=4
+skill,NXT11416,PR04240,Kubernetes>=4
+skill,NXT10013,PR04242,PostgreSQL>=3
+skill,NXT10137,PR04242,PostgreSQL>=3
+skill,NXT10279,PR04242,Apache Kafka>=3
+skill,NXT10524,PR04242,Apache Kafka>=3
+skill,NXT10567,PR04242,PostgreSQL>=3
+skill,NXT11189,PR04242,Apache Kafka>=3
+skill,NXT11215,PR04242,PostgreSQL>=3
+skill,NXT11416,PR04242,PostgreSQL>=3
+skill,NXT10893,PR04242,PostgreSQL>=3
+skill,NXT10249,PR04244,REST Assured>=2
+skill,NXT10462,PR04244,REST Assured>=2
+skill,NXT10539,PR04244,REST Assured>=2
+skill,NXT11096,PR04246,Payments (UPI/IMPS/NEFT)>=2
+skill,NXT10483,PR04246,User Stories & Acceptance Criteria>=3
+skill,NXT10398,PR04246,User Stories & Acceptance Criteria>=3
+skill,NXT10398,PR04246,Payments (UPI/IMPS/NEFT)>=2
+skill,NXT10793,PR04246,User Stories & Acceptance Criteria>=3
+skill,NXT10793,PR04246,Payments (UPI/IMPS/NEFT)>=2
+skill,NXT10909,PR04246,User Stories & Acceptance Criteria>=3
+skill,NXT10909,PR04246,Payments (UPI/IMPS/NEFT)>=2
+skill,NXT11294,PR04246,User Stories & Acceptance Criteria>=3
+skill,NXT11294,PR04246,Payments (UPI/IMPS/NEFT)>=2
+skill,NXT10119,PR04249,Apache Spark (PySpark)>=4
+skill,NXT10148,PR04249,Apache Spark (PySpark)>=4
+skill,NXT10290,PR04249,Apache Spark (PySpark)>=4
+skill,NXT10306,PR04249,Apache Spark (PySpark)>=4
+skill,NXT10324,PR04249,Apache Spark (PySpark)>=4
+skill,NXT10145,PR04251,scikit-learn>=3
+skill,NXT10263,PR04251,scikit-learn>=3
+skill,NXT10362,PR04251,scikit-learn>=3
+skill,NXT11096,PR04254,AML & KYC>=3
+skill,NXT10398,PR04254,AML & KYC>=3
+skill,NXT10483,PR04254,AML & KYC>=3
+skill,NXT10793,PR04254,AML & KYC>=3
+skill,NXT10909,PR04254,AML & KYC>=3
+skill,NXT11294,PR04254,AML & KYC>=3
+skill,NXT10148,PR04256,dbt>=4
+skill,NXT10978,PR04256,SQL>=4
+skill,NXT11028,PR04256,dbt>=4
+skill,NXT10290,PR04256,Snowflake>=4
+skill,NXT10290,PR04256,dbt>=4
+skill,NXT10119,PR04258,Tableau>=3
+skill,NXT10148,PR04258,Tableau>=3
+skill,NXT10290,PR04258,Tableau>=3
+skill,NXT10324,PR04258,Tableau>=3
+skill,NXT10081,PR04260,SQL>=3
+skill,NXT10398,PR04260,Healthcare Claims (US Payer)>=2
+skill,NXT10702,PR04260,Healthcare Claims (US Payer)>=2
+skill,NXT10702,PR04260,SQL>=3
+skill,NXT11096,PR04260,Healthcare Claims (US Payer)>=2
+skill,NXT11096,PR04260,SQL>=3
+skill,NXT10793,PR04260,Healthcare Claims (US Payer)>=2
+skill,NXT10793,PR04260,SQL>=3
+skill,NXT11294,PR04260,Healthcare Claims (US Payer)>=2
+skill,NXT11294,PR04260,SQL>=3
+skill,NXT11015,PR04264,Appium>=2
+skill,NXT11433,PR04264,Appium>=2
+skill,NXT10386,PR04264,Appium>=2
+skill,NXT10386,PR04264,Mobile App Testing>=2
+planned_roll_off,NXT11366,PR04267,assignment on PRJ0667 ends before 2027-02-10
+skill,NXT11366,PR04267,Microservices Architecture>=4
+skill,NXT11366,PR04267,Apache Kafka>=4
+skill,NXT11366,PR04267,Kubernetes>=4
+skill,NXT11000,PR04273,Requirements Elicitation>=3
+skill,NXT11000,PR04273,User Stories & Acceptance Criteria>=3
+skill,NXT11000,PR04273,Payments (UPI/IMPS/NEFT)>=2
+skill,NXT10081,PR04281,Insurance (P&C / Life)>=3
+skill,NXT10702,PR04281,Insurance (P&C / Life)>=3
+skill,NXT10398,PR04281,Insurance (P&C / Life)>=3
+skill,NXT10483,PR04281,Insurance (P&C / Life)>=3
+skill,NXT10909,PR04281,Insurance (P&C / Life)>=3
+skill,NXT11000,PR04281,Insurance (P&C / Life)>=3
+skill,NXT11294,PR04281,Insurance (P&C / Life)>=3
+skill,NXT10779,PR04285,Power BI>=3
+skill,NXT10793,PR04285,Power BI>=3
+skill,NXT10909,PR04285,Power BI>=3
+skill,NXT10081,PR04290,Telecom OSS/BSS>=3
+skill,NXT11369,PR04290,Telecom OSS/BSS>=3
+skill,NXT10390,PR04290,Telecom OSS/BSS>=3
+skill,NXT10398,PR04290,Telecom OSS/BSS>=3
+skill,NXT10483,PR04290,Telecom OSS/BSS>=3
+skill,NXT10779,PR04290,Telecom OSS/BSS>=3
+skill,NXT10825,PR04291,Apache Spark (PySpark)>=4
+skill,NXT10978,PR04291,Apache Spark (PySpark)>=4
+skill,NXT11068,PR04291,Apache Spark (PySpark)>=4
+skill,NXT11068,PR04291,Data Modeling>=4
+skill,NXT10013,PR04293,REST API Design>=2
+skill,NXT10879,PR04294,iOS Development>=2
+skill,NXT10879,PR04294,Swift>=2
+skill,NXT10971,PR04294,iOS Development>=2
+skill,NXT10971,PR04294,Swift>=2
+skill,NXT10014,PR04294,iOS Development>=2
+skill,NXT10014,PR04294,Swift>=2
+skill,NXT10538,PR04294,iOS Development>=2
+skill,NXT10538,PR04294,Swift>=2
+skill,NXT10945,PR04294,iOS Development>=2
+skill,NXT10945,PR04294,Swift>=2
+skill,NXT10953,PR04294,iOS Development>=2
+skill,NXT10953,PR04294,Swift>=2
+skill,NXT11104,PR04294,iOS Development>=2
+skill,NXT11104,PR04294,Swift>=2
+planned_roll_off,NXT10255,PR04295,assignment on PRJ0668 ends before 2026-11-26
+planned_roll_off,NXT10255,PR04295,assignment on PRJ0682 ends before 2026-11-26
+planned_roll_off,NXT10208,PR04295,assignment on PRJ0697 ends before 2026-11-26
+skill,NXT10563,PR04295,Microsoft Azure>=4
+skill,NXT11272,PR04295,Microsoft Azure>=4
+skill,NXT10191,PR04295,C#>=4
+skill,NXT10191,PR04295,Microsoft Azure>=4
+skill,NXT11047,PR04295,C#>=4
+skill,NXT11047,PR04295,ASP.NET Core>=4
+skill,NXT11047,PR04295,Microsoft Azure>=4
+skill,NXT10893,PR04295,C#>=4
+skill,NXT10893,PR04295,ASP.NET Core>=4
+skill,NXT10893,PR04295,Microsoft Azure>=4
+skill,NXT10957,PR04295,C#>=4
+skill,NXT10957,PR04295,ASP.NET Core>=4
+skill,NXT10957,PR04295,Microsoft Azure>=4
+skill,NXT10208,PR04295,C#>=4
+skill,NXT10208,PR04295,ASP.NET Core>=4
+skill,NXT10208,PR04295,Microsoft Azure>=4
+skill,NXT10838,PR04297,scikit-learn>=3
+skill,NXT11002,PR04297,scikit-learn>=3
+skill,NXT11445,PR04297,scikit-learn>=3
+skill,NXT10396,PR04297,scikit-learn>=3
+skill,NXT10415,PR04297,scikit-learn>=3
+skill,NXT10279,PR04298,Microservices Architecture>=4
+skill,NXT10534,PR04298,Apache Kafka>=4
+skill,NXT10255,PR04300,Entity Framework Core>=4
+skill,NXT10208,PR04300,Entity Framework Core>=4
+skill,NXT10208,PR04300,Microsoft SQL Server>=4
+skill,NXT10893,PR04300,Entity Framework Core>=4
+skill,NXT10893,PR04300,Microsoft SQL Server>=4
+skill,NXT10957,PR04300,Entity Framework Core>=4
+skill,NXT10957,PR04300,Microsoft SQL Server>=4
+skill,NXT10172,PR04304,ITIL / Incident Management>=3
+skill,NXT10279,PR04304,ITIL / Incident Management>=3
+skill,NXT10400,PR04304,ITIL / Incident Management>=3
+skill,NXT10534,PR04304,ITIL / Incident Management>=3
+skill,NXT10562,PR04304,ITIL / Incident Management>=3
+skill,NXT10818,PR04305,Helm>=2
+skill,NXT10963,PR04305,Helm>=2
+skill,NXT11271,PR04305,Helm>=2
+skill_coverage,NXT10394,,Go
+skill_coverage,NXT11270,,Go
+skill_coverage,NXT11310,,Go
+skill_coverage,NXT10013,,Kotlin
+skill_coverage,NXT11098,,Kotlin
+skill_coverage,NXT10879,,Swift
+skill_coverage,NXT11162,,Scala
+skill_coverage,NXT11003,,Scala
+skill_coverage,NXT10879,,Dart
+skill_coverage,NXT10971,,Dart
+skill_coverage,NXT10070,,Dart
+skill_coverage,NXT11098,,Dart
+skill_coverage,NXT11338,,Apex
+skill_coverage,NXT10838,,R
+skill_coverage,NXT11254,,R
+skill_coverage,NXT11375,,R
+skill_coverage,NXT11002,,R
+skill_coverage,NXT11353,,gRPC
+skill_coverage,NXT10877,,gRPC
+skill_coverage,NXT11051,,NestJS
+skill_coverage,NXT10957,,NestJS
+skill_coverage,NXT10254,,NestJS
+skill_coverage,NXT10992,,NestJS
+skill_coverage,NXT11445,,Flask
+skill_coverage,NXT10431,,Flask
+skill_coverage,NXT11300,,Camunda BPM
+skill_coverage,NXT11353,,Camunda BPM
+skill_coverage,NXT10737,,Camunda BPM
+skill_coverage,NXT10877,,JUnit & Mockito
+skill_coverage,NXT10682,,JUnit & Mockito
+skill_coverage,NXT10014,,Vue.js
+skill_coverage,NXT11240,,Vue.js
+skill_coverage,NXT10538,,Vue.js
+skill_coverage,NXT11399,,Vue.js
+skill_coverage,NXT10538,,Tailwind CSS
+skill_coverage,NXT11222,,Tailwind CSS
+skill_coverage,NXT10538,,Micro Frontends
+skill_coverage,NXT10014,,Micro Frontends
+skill_coverage,NXT11104,,Micro Frontends
+skill_coverage,NXT11399,,Micro Frontends
+skill_coverage,NXT10538,,Jest
+skill_coverage,NXT10014,,Jest
+skill_coverage,NXT11098,,Android Development
+skill_coverage,NXT10070,,Flutter
+skill_coverage,NXT10971,,Flutter
+skill_coverage,NXT11098,,Flutter
+skill_coverage,NXT10879,,Flutter
+skill_coverage,NXT11399,,React Native
+skill_coverage,NXT10704,,React Native
+skill_coverage,NXT11222,,React Native
+skill_coverage,NXT11098,,Jetpack Compose
+skill_coverage,NXT10070,,Jetpack Compose
+skill_coverage,NXT10971,,SwiftUI
+skill_coverage,NXT10879,,SwiftUI
+skill_coverage,NXT11098,,SwiftUI
+skill_coverage,NXT10070,,Firebase
+skill_coverage,NXT10971,,Firebase
+skill_coverage,NXT10254,,Firebase
+skill_coverage,NXT10957,,Firebase
+skill_coverage,NXT10957,,WebRTC
+skill_coverage,NXT10070,,WebRTC
+skill_coverage,NXT10704,,WebRTC
+skill_coverage,NXT10971,,Google Maps Platform
+skill_coverage,NXT10704,,Google Maps Platform
+skill_coverage,NXT10690,,Cassandra
+skill_coverage,NXT11333,,Cassandra
+skill_coverage,NXT11139,,Elasticsearch
+skill_coverage,NXT11324,,Elasticsearch
+skill_coverage,NXT10833,,Amazon DynamoDB
+skill_coverage,NXT10119,,Amazon DynamoDB
+skill_coverage,NXT11350,,Amazon DynamoDB
+skill_coverage,NXT11056,,Amazon DynamoDB
+skill_coverage,NXT10563,,Azure Cosmos DB
+skill_coverage,NXT11137,,Azure Cosmos DB
+skill_coverage,NXT11047,,Azure Cosmos DB
+skill_coverage,NXT10191,,RabbitMQ
+skill_coverage,NXT10737,,RabbitMQ
+skill_coverage,NXT11198,,Google Cloud Platform (GCP)
+skill_coverage,NXT11047,,Serverless (AWS Lambda / Azure Functions)
+skill_coverage,NXT11272,,Serverless (AWS Lambda / Azure Functions)
+skill_coverage,NXT10431,,Serverless (AWS Lambda / Azure Functions)
+skill_coverage,NXT10562,,OpenShift
+skill_coverage,NXT11270,,OpenShift
+skill_coverage,NXT10963,,OpenShift
+skill_coverage,NXT11052,,Ansible
+skill_coverage,NXT11290,,Ansible
+skill_coverage,NXT10963,,Ansible
+skill_coverage,NXT10818,,Ansible
+skill_coverage,NXT11398,,GitHub Actions
+skill_coverage,NXT11290,,GitHub Actions
+skill_coverage,NXT10394,,GitHub Actions
+skill_coverage,NXT10963,,GitLab CI/CD
+skill_coverage,NXT11310,,GitLab CI/CD
+skill_coverage,NXT11290,,Helm
+skill_coverage,NXT11310,,Helm
+skill_coverage,NXT11063,,Argo CD
+skill_coverage,NXT11052,,Argo CD
+skill_coverage,NXT10963,,Argo CD
+skill_coverage,NXT11310,,ELK Stack
+skill_coverage,NXT10818,,ELK Stack
+skill_coverage,NXT11310,,Site Reliability Engineering
+skill_coverage,NXT10963,,Site Reliability Engineering
+skill_coverage,NXT11052,,Site Reliability Engineering
+skill_coverage,NXT10818,,Site Reliability Engineering
+skill_coverage,NXT11198,,AWS Glue
+skill_coverage,NXT11100,,AWS Glue
+skill_coverage,NXT10119,,AWS Glue
+skill_coverage,NXT10822,,AWS Glue
+skill_coverage,NXT11324,,Google BigQuery
+skill_coverage,NXT11100,,ETL/ELT Development
+skill_coverage,NXT11124,,Microsoft Fabric
+skill_coverage,NXT10324,,Microsoft Fabric
+skill_coverage,NXT11171,,Microsoft Fabric
+skill_coverage,NXT11375,,TensorFlow
+skill_coverage,NXT10193,,TensorFlow
+skill_coverage,NXT10838,,PyTorch
+skill_coverage,NXT11386,,PyTorch
+skill_coverage,NXT11375,,PyTorch
+skill_coverage,NXT10838,,Natural Language Processing (NLP)
+skill_coverage,NXT10838,,Recommendation Systems
+skill_coverage,NXT11386,,MLOps
+skill_coverage,NXT11445,,MLOps
+skill_coverage,NXT10263,,MLflow
+skill_coverage,NXT11445,,MLflow
+skill_coverage,NXT10193,,MLflow
+skill_coverage,NXT10263,,Amazon SageMaker
+skill_coverage,NXT11386,,Amazon SageMaker
+skill_coverage,NXT11375,,Amazon SageMaker
+skill_coverage,NXT11445,,Prompt Engineering
+skill_coverage,NXT11386,,Prompt Engineering
+skill_coverage,NXT10193,,Vector Databases
+skill_coverage,NXT10838,,Vector Databases
+skill_coverage,NXT10951,,Appium
+skill_coverage,NXT11257,,REST Assured
+skill_coverage,NXT11398,,REST Assured
+skill_coverage,NXT10975,,TestNG
+skill_coverage,NXT10791,,TestNG
+skill_coverage,NXT11328,,TestNG
+skill_coverage,NXT10539,,Cucumber (BDD)
+skill_coverage,NXT10975,,Cucumber (BDD)
+skill_coverage,NXT10791,,Cucumber (BDD)
+skill_coverage,NXT10960,,Cucumber (BDD)
+skill_coverage,NXT11338,,Salesforce Administration
+skill_coverage,NXT11338,,Lightning Web Components (LWC)
+skill_coverage,NXT11350,,Lightning Web Components (LWC)
+skill_coverage,NXT11338,,Salesforce Service Cloud
+skill_coverage,NXT11350,,Salesforce Service Cloud
+skill_coverage,NXT11338,,Salesforce Sales Cloud
+skill_coverage,NXT11350,,Salesforce Sales Cloud
+skill_coverage,NXT11414,,Salesforce Sales Cloud
+skill_coverage,NXT11338,,MuleSoft
+skill_coverage,NXT11350,,MuleSoft
+skill_coverage,NXT11414,,MuleSoft
+skill_coverage,NXT11137,,SAP Integration (IDoc/BAPI)
+skill_coverage,NXT11362,,SAP Integration (IDoc/BAPI)
+skill_coverage,NXT11324,,SAP Integration (IDoc/BAPI)
+skill_coverage,NXT11401,,SAP Integration (IDoc/BAPI)
+skill_coverage,NXT11317,,Application Security
+skill_coverage,NXT11134,,Application Security
+skill_coverage,NXT11317,,Penetration Testing
+skill_coverage,NXT10898,,Penetration Testing
+skill_coverage,NXT11234,,Identity & Access Management (IAM)
+skill_coverage,NXT11252,,Identity & Access Management (IAM)
+skill_coverage,NXT10898,,Cloud Security
+skill_coverage,NXT11234,,ISO 27001 & Compliance
+skill_coverage,NXT11317,,ISO 27001 & Compliance
+skill_coverage,NXT11085,,ISO 27001 & Compliance
+skill_coverage,NXT11401,,ISO 27001 & Compliance
+skill_coverage,NXT10073,,Kanban
+skill_coverage,NXT10398,,SAFe
+skill_coverage,NXT10398,,Budget & Financial Management
+skill_coverage,NXT11231,,Microsoft Project
+skill_coverage,NXT10702,,Microsoft Project
+skill_coverage,NXT11060,,User Stories & Acceptance Criteria
+skill_coverage,NXT11404,,UML
+skill_coverage,NXT11096,,UML
+skill_coverage,NXT11289,,UML
+skill_coverage,NXT11397,,UML
+skill_coverage,NXT11330,,User Acceptance Testing (UAT)
+skill_coverage,NXT11251,,User Acceptance Testing (UAT)
+skill_coverage,NXT11060,,Product Ownership
+skill_coverage,NXT11251,,Product Ownership
+skill_coverage,NXT11289,,Product Ownership
+skill_coverage,NXT10702,,Product Ownership
+skill_coverage,NXT11397,,Gap Analysis
+skill_coverage,NXT11102,,Gap Analysis
+skill_coverage,NXT10985,,Adobe XD
+skill_coverage,NXT11363,,Adobe XD
+skill_coverage,NXT10971,,Accessibility (WCAG)
+skill_coverage,NXT10462,,Accessibility (WCAG)
+skill_coverage,NXT11251,,Lending & Loan Origination
+skill_coverage,NXT11096,,Lending & Loan Origination
+skill_coverage,NXT10014,,Clinical Trials
+skill_coverage,NXT11315,,Media Streaming (OTT)
+skill_coverage,NXT10807,,Media Streaming (OTT)
+skill_coverage,NXT10254,,Media Streaming (OTT)
+skill_coverage,NXT10070,,Energy & Utilities (AMI)
+skill_coverage,NXT11310,,Energy & Utilities (AMI)
+skill_coverage,NXT11226,,Energy & Utilities (AMI)
+cert_coverage,NXT11002,,AWS-AIF
+cert_coverage,NXT11386,,AWS-AIF
+cert_coverage,NXT11315,,AWS-DEA
+cert_coverage,NXT10690,,AWS-DEA
+cert_coverage,NXT10394,,AWS-DOP
+cert_coverage,NXT10737,,AWS-SAP
+cert_coverage,NXT10877,,AWS-SAP
+cert_coverage,NXT10263,,AI-900
+cert_coverage,NXT11145,,DP-900
+cert_coverage,NXT10563,,AZ-305
+cert_coverage,NXT10517,,AZ-305
+cert_coverage,NXT10517,,AZ-400
+cert_coverage,NXT11234,,AZ-500
+cert_coverage,NXT11252,,AZ-500
+cert_coverage,NXT11198,,DP-600
+cert_coverage,NXT11377,,DP-600
+cert_coverage,NXT11124,,DP-700
+cert_coverage,NXT10263,,AI-102
+cert_coverage,NXT11386,,AI-102
+cert_coverage,NXT11002,,DP-100
+cert_coverage,NXT10838,,DP-100
+cert_coverage,NXT10690,,GCP-ACE
+cert_coverage,NXT10394,,GCP-PCA
+cert_coverage,NXT10838,,GCP-PMLE
+cert_coverage,NXT11002,,GCP-PMLE
+cert_coverage,NXT11290,,GCP-PCDE
+cert_coverage,NXT11063,,GCP-PCDE
+cert_coverage,NXT11252,,CKS
+cert_coverage,NXT11401,,CKS
+cert_coverage,NXT11310,,RHCSA
+cert_coverage,NXT10963,,RHCSA
+cert_coverage,NXT11162,,DBX-DEA
+cert_coverage,NXT10690,,DBX-DEP
+cert_coverage,NXT11254,,DBX-MLA
+cert_coverage,NXT11100,,SNOW-CORE
+cert_coverage,NXT10119,,TABLEAU-CDA
+cert_coverage,NXT11324,,TABLEAU-CDA
+cert_coverage,NXT11414,,SF-ADMIN
+cert_coverage,NXT11350,,SF-PD1
+cert_coverage,NXT11414,,SF-SVC
+cert_coverage,NXT11414,,SF-SALES
+cert_coverage,NXT11338,,SF-SALES
+cert_coverage,NXT10073,,PMP
+cert_coverage,NXT10398,,PMI-ACP
+cert_coverage,NXT10702,,PSM1
+cert_coverage,NXT10398,,ITIL4-F
+cert_coverage,NXT10073,,ITIL4-F
+cert_coverage,NXT10539,,ISTQB-TAE
+cert_coverage,NXT11403,,ISTQB-TAE
+cert_coverage,NXT10660,,GOOGLE-UX
+cert_coverage,NXT10807,,NNG-UX
+cert_coverage,NXT11096,,IIBA-CCBA

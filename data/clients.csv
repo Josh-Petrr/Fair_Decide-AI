@@ -1,0 +1,30 @@
+client_id,client_name,industry,industry_code,sub_industry,hq_city,country,relationship_since,account_delivery_manager_id
+KCB,Kaveri Commercial Bank,Banking & Financial Services,BANK,Retail & Commercial Banking,Bengaluru,India,2016,NXT10329
+BRF,Bayridge Financial Group,Banking & Financial Services,BANK,Retail Banking & Cards,Charlotte,United States,2018,NXT10483
+ASF,Ashoka Small Finance Bank,Banking & Financial Services,BANK,Small Finance Bank / Microfinance,Pune,India,2019,NXT11280
+UPX,UnityPay Fintech,Banking & Financial Services,BANK,Payments & Wallets,Gurugram,India,2020,NXT10359
+PWP,Pinnacle Wealth Partners,Banking & Financial Services,BANK,Wealth & Asset Management,Singapore,Singapore,2019,NXT10114
+HLB,Harbourline Bank plc,Banking & Financial Services,BANK,Retail & SME Banking,Manchester,United Kingdom,2021,NXT10114
+SMI,Sterling Mutual Insurance,Insurance,INS,Life & Pensions,London,United Kingdom,2017,NXT11280
+TLI,Trident Life Insurance,Insurance,INS,Life Insurance,Mumbai,India,2018,NXT10483
+ECG,Evergreen Casualty & General,Insurance,INS,Property & Casualty,Hartford,United States,2020,NXT11294
+ARG,Arogya Hospitals Group,Healthcare,HEALTH,Hospital Network (32 hospitals),Chennai,India,2018,NXT10293
+MAX,MedAxis Health Plans,Healthcare,HEALTH,US Health Insurance Payer,Dallas,United States,2019,NXT10837
+LSD,Lifespring Diagnostics,Healthcare,HEALTH,Diagnostics & Pathology Labs,Hyderabad,India,2021,NXT10837
+CNP,CuraNova Pharmaceuticals,Life Sciences & Pharma,LIFESCI,Generic & Specialty Pharma,Ahmedabad,India,2019,NXT10011
+HCR,Helix Clinical Research,Life Sciences & Pharma,LIFESCI,Contract Research Organization (CRO),Boston,United States,2020,NXT10329
+UKT,UrbanKart,Retail & E-commerce,RETAIL,Online Marketplace,Bengaluru,India,2018,NXT11294
+FBK,FreshBasket,Retail & E-commerce,RETAIL,Online Grocery & Quick Commerce,Hyderabad,India,2021,NXT11280
+SWA,Stylewise Apparel,Retail & E-commerce,RETAIL,"Fashion Retail (Omnichannel, 240 stores)",Mumbai,India,2019,NXT11294
+HNF,HomeNest Furnishings,Retail & E-commerce,RETAIL,Home Furnishing Retail,Atlanta,United States,2020,NXT10114
+SDF,Sundara Foods,Consumer Goods (CPG),CPG,Packaged Foods & Beverages,Chennai,India,2019,NXT10011
+SKT,Skyline Telecom,Telecommunications,TELECOM,Mobile Network Operator,Dubai,United Arab Emirates,2018,NXT10329
+AWB,AirWave Broadband,Telecommunications,TELECOM,Fibre Broadband ISP,Pune,India,2020,NXT10841
+SBX,StreamBox Media,Media & Entertainment,MEDIA,OTT Video Streaming,Mumbai,India,2020,NXT10841
+TAC,Tarang Auto Components,Manufacturing,MFG,Automotive Components,Pune,India,2019,NXT10329
+VSA,Vajra Steel & Alloys,Manufacturing,MFG,Steel Manufacturing,Jamshedpur,India,2021,NXT10009
+OPE,Orion Precision Engineering GmbH,Manufacturing,MFG,Industrial Machinery,Stuttgart,Germany,2020,NXT10359
+SHL,SwiftHaul Logistics,Transportation & Logistics,LOGI,Road Freight & 3PL,Gurugram,India,2019,NXT10837
+BOF,BlueOcean Freight B.V.,Transportation & Logistics,LOGI,Ocean & Air Freight Forwarding,Rotterdam,Netherlands,2021,NXT10841
+GGP,GreenGrid Power Distribution,Energy & Utilities,ENERGY,Electricity Distribution (DISCOM),Hyderabad,India,2020,NXT10114
+SLR,Solaris Renewables,Energy & Utilities,ENERGY,Solar & Wind Generation,Austin,United States,2021,NXT10483

@@ -1,0 +1,33 @@
+user_id,employee_id,full_name,email,app_role,is_active
+USR001,NXT10009,Irfan Qureshi,irfan.qureshi@nexoratech.example,manager,True
+USR002,NXT10011,Allen D'Souza,allen.dsouza@nexoratech.example,manager,True
+USR003,NXT10073,Wasim Syed,wasim.syed@nexoratech.example,manager,True
+USR004,NXT10114,Wasim Hussain,wasim.hussain@nexoratech.example,manager,True
+USR005,NXT10226,Sudeep Hiremath,sudeep.hiremath@nexoratech.example,manager,True
+USR006,NXT10227,Vaibhav Saxena,vaibhav.saxena@nexoratech.example,manager,True
+USR007,NXT10293,Nandini Banerjee,nandini.banerjee@nexoratech.example,manager,True
+USR008,NXT10305,Harshal Thakkar,harshal.thakkar@nexoratech.example,manager,True
+USR009,NXT10329,Lokesh Venkatesan,lokesh.venkatesan@nexoratech.example,manager,True
+USR010,NXT10332,Heena Syed,heena.syed@nexoratech.example,manager,True
+USR011,NXT10359,Ramesh Elangovan,ramesh.elangovan@nexoratech.example,manager,True
+USR012,NXT10390,Hemant Tripathi,hemant.tripathi@nexoratech.example,manager,True
+USR013,NXT10483,Niharika Raju,niharika.raju@nexoratech.example,manager,True
+USR014,NXT10575,Vaibhav Singh,vaibhav.singh@nexoratech.example,manager,True
+USR015,NXT10607,Atharva Naik,atharva.naik@nexoratech.example,manager,True
+USR016,NXT10753,Kiran Murthy,kiran.murthy@nexoratech.example,manager,True
+USR017,NXT10779,Parth Deshpande,parth.deshpande@nexoratech.example,manager,True
+USR018,NXT10782,Murali Arumugam,murali.arumugam@nexoratech.example,manager,True
+USR019,NXT10788,Swathi Goud,swathi.goud@nexoratech.example,manager,True
+USR020,NXT10805,Gaurav Verma,gaurav.verma@nexoratech.example,manager,True
+USR021,NXT10837,Ramya Rajendran,ramya.rajendran@nexoratech.example,manager,True
+USR022,NXT10841,Sai Kiran Murthy,saikiran.murthy@nexoratech.example,manager,True
+USR023,NXT10863,Utkarsh Awasthi,utkarsh.awasthi@nexoratech.example,manager,True
+USR024,NXT11113,Satish Goud,satish.goud@nexoratech.example,manager,True
+USR025,NXT11280,Ayush Negi,ayush.negi@nexoratech.example,manager,True
+USR026,NXT11294,Shashank Kulkarni,shashank.kulkarni@nexoratech.example,manager,True
+USR027,NXT11329,Afreen Inamdar,afreen.inamdar@nexoratech.example,manager,True
+USR028,NXT11421,Sachin Jain,sachin.jain@nexoratech.example,manager,True
+USR029,NXT11441,Imran Rahman,imran.rahman@nexoratech.example,manager,True
+USR030,,Rekha Menon,rekha.menon@nexoratech.example,hr_admin,True
+USR031,,Imran Qureshi,imran.qureshi@nexoratech.example,hr_admin,True
+USR032,,Lakshmi Narayanan,lakshmi.narayanan@nexoratech.example,auditor,True

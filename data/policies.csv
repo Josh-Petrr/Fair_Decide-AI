@@ -1,0 +1,14 @@
+policy_id,policy_name,rule_key,rule_value,is_hard_constraint,description
+POL01,Maximum allocation,MAX_ALLOCATION_PCT,100,True,Total allocation across projects cannot exceed 100% without Delivery Head approval.
+POL02,Allocation warning threshold,WARN_ALLOCATION_PCT,80,False,Show a workload warning when allocation after assignment would exceed 80%.
+POL03,Maximum concurrent projects,MAX_CONCURRENT_PROJECTS,3,True,An engineer may work on at most 3 projects at the same time (project managers: 4).
+POL04,Project manager concurrency,PM_MAX_CONCURRENT_PROJECTS,4,True,A project manager may manage at most 4 projects concurrently.
+POL05,Mandatory certification validity,MANDATORY_CERT_MUST_BE_VALID,true,True,Certifications marked mandatory for a role must be valid (not expired) on the role start date.
+POL06,Notice period,BLOCK_IF_EXIT_BEFORE_ROLE_END,true,True,Employees serving notice cannot be assigned to roles that start after their last working day.
+POL07,Long leave,BLOCK_IF_LONG_LEAVE_WITHIN_DAYS,30,True,Employees with approved leave longer than 10 days starting within 30 days of the role start are not assignable.
+POL08,Experience tolerance,MIN_EXPERIENCE_TOLERANCE_YEARS,1,False,Candidates up to 1 year below the minimum experience may be shown as 'stretch' candidates with a warning.
+POL09,Bench priority,BENCH_PRIORITY_DAYS,30,False,Employees unallocated for more than 30 days should be prioritised when equally suitable.
+POL10,Induction period,NEW_JOINER_INDUCTION_DAYS,14,True,New joiners cannot be assigned during their first 14 days (induction and training).
+POL11,Default minimum proficiency,DEFAULT_MIN_PROFICIENCY,3,False,"When a requirement does not specify a level, proficiency 3 (Intermediate) is expected."
+POL12,Protected attributes,SENSITIVE_ATTRIBUTES_EXCLUDED,"gender,date_of_birth,age_band",True,Protected attributes must never be used for ranking; they are used only for fairness audits.
+POL13,Human approval,HUMAN_APPROVAL_REQUIRED,true,True,Every assignment requires explicit approval by the requesting manager with a recorded reason.

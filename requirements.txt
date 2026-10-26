@@ -1,0 +1,14 @@
+pandas>=2.2
+numpy>=2.0
+psycopg[binary]>=3.2
+psycopg-pool>=3.2
+python-dotenv>=1.0
+pyarrow>=17
+fastembed>=0.5
+lightgbm>=4.5
+shap>=0.46
+scikit-learn>=1.5
+fairlearn>=0.12
+fastapi>=0.115
+uvicorn[standard]>=0.32
+httpx>=0.27

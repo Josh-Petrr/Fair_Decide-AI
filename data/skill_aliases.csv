@@ -1,0 +1,471 @@
+skill_id,alias
+SK001,core java
+SK001,j2ee
+SK001,java 17
+SK001,java 21
+SK002,python3
+SK002,py
+SK003,js
+SK003,es6
+SK003,ecmascript
+SK004,ts
+SK005,c sharp
+SK005,csharp
+SK006,golang
+SK010,t-sql
+SK010,ansi sql
+SK010,sql queries
+SK012,salesforce apex
+SK013,bash
+SK013,shell
+SK013,unix scripting
+SK014,r programming
+SK014,rstudio
+SK015,springboot
+SK015,spring
+SK016,spring cloud gateway
+SK016,eureka
+SK017,hibernate
+SK017,jpa
+SK017,spring data jpa
+SK018,microservices
+SK018,micro services
+SK018,distributed systems
+SK019,rest
+SK019,restful apis
+SK019,rest apis
+SK019,openapi
+SK019,swagger
+SK020,apollo graphql
+SK021,protobuf
+SK021,protocol buffers
+SK022,nodejs
+SK022,node
+SK023,express
+SK023,expressjs
+SK024,nest.js
+SK025,django rest framework
+SK025,drf
+SK026,fast api
+SK028,.net core
+SK028,dotnet core
+SK028,asp.net
+SK028,.net 8
+SK028,dotnet
+SK029,ef core
+SK029,entity framework
+SK030,camunda
+SK030,bpmn engine
+SK030,workflow engine
+SK031,junit
+SK031,mockito
+SK031,unit testing java
+SK032,reactjs
+SK032,react.js
+SK032,react 18
+SK033,angular 2+
+SK033,angular 16
+SK034,vue
+SK034,vuejs
+SK034,nuxt
+SK035,nextjs
+SK036,redux toolkit
+SK036,rtk
+SK037,html
+SK037,css
+SK037,html5
+SK037,css3
+SK037,scss
+SK038,tailwind
+SK039,module federation
+SK039,microfrontends
+SK040,react testing library
+SK040,javascript unit testing
+SK041,android
+SK041,android sdk
+SK042,ios
+SK042,uikit
+SK042,xcode
+SK044,rn
+SK045,compose
+SK047,firebase cloud messaging
+SK047,fcm
+SK047,firestore
+SK048,video calling
+SK048,real-time video
+SK049,google maps api
+SK049,maps sdk
+SK049,geolocation
+SK050,postgres
+SK050,psql
+SK051,mariadb
+SK052,oracle db
+SK052,oracle 19c
+SK053,mssql
+SK053,sql server
+SK053,ssms
+SK054,plsql
+SK054,stored procedures
+SK055,mongo
+SK055,nosql document db
+SK056,redis cache
+SK056,elasticache
+SK057,apache cassandra
+SK057,scylladb
+SK058,elastic
+SK058,opensearch
+SK058,solr
+SK059,dynamodb
+SK060,cosmos db
+SK060,cosmosdb
+SK061,kafka
+SK061,confluent
+SK061,event streaming
+SK062,amqp
+SK062,message queue
+SK063,aws
+SK063,amazon web services
+SK063,ec2
+SK063,s3
+SK064,azure
+SK065,gcp
+SK065,google cloud
+SK066,lambda
+SK066,aws lambda
+SK066,azure functions
+SK066,serverless
+SK067,red hat openshift
+SK067,ocp
+SK068,containers
+SK068,containerization
+SK069,k8s
+SK069,eks
+SK069,aks
+SK069,gke
+SK070,iac
+SK070,infrastructure as code
+SK070,hcl
+SK071,configuration management
+SK072,jenkins pipelines
+SK072,ci/cd
+SK073,gha
+SK074,ado
+SK074,azure pipelines
+SK074,vsts
+SK075,gitlab
+SK075,gitlab ci
+SK076,helm charts
+SK077,argocd
+SK077,gitops
+SK078,prometheus
+SK078,grafana
+SK078,observability
+SK079,elk
+SK079,kibana
+SK079,logstash
+SK079,efk
+SK080,linux
+SK080,rhel
+SK080,ubuntu server
+SK081,sre
+SK081,slo
+SK081,incident management
+SK082,spark
+SK082,pyspark
+SK082,spark sql
+SK083,azure databricks
+SK083,unity catalog
+SK084,snowpark
+SK085,airflow
+SK085,mwaa
+SK085,cloud composer
+SK086,data build tool
+SK086,dbt core
+SK087,adf
+SK088,glue
+SK088,glue etl
+SK089,bigquery
+SK089,bq
+SK090,hadoop
+SK090,hive
+SK090,hdfs
+SK090,cloudera
+SK091,informatica
+SK091,iics
+SK092,dimensional modeling
+SK092,star schema
+SK092,erwin
+SK092,data vault
+SK093,etl
+SK093,elt
+SK093,data pipelines
+SK094,lakehouse
+SK094,delta tables
+SK095,fabric
+SK095,onelake
+SK096,ml
+SK096,predictive modeling
+SK096,supervised learning
+SK097,dl
+SK097,neural networks
+SK098,sklearn
+SK099,xgboost
+SK099,lightgbm
+SK099,gradient boosting
+SK100,keras
+SK100,tf
+SK101,torch
+SK102,nlp
+SK102,text mining
+SK102,spacy
+SK102,named entity recognition
+SK103,cv
+SK103,opencv
+SK103,image recognition
+SK103,ocr
+SK103,yolo
+SK104,forecasting
+SK104,arima
+SK104,prophet
+SK104,demand forecasting
+SK105,recommender systems
+SK105,collaborative filtering
+SK106,model deployment
+SK106,model monitoring
+SK107,experiment tracking
+SK108,sagemaker
+SK109,azure ml
+SK109,aml studio
+SK110,genai
+SK110,gen ai
+SK110,llm
+SK110,large language models
+SK110,azure openai
+SK110,openai api
+SK110,bedrock
+SK111,langgraph
+SK111,llamaindex
+SK112,rag
+SK112,retrieval augmented generation
+SK113,prompting
+SK113,prompt design
+SK114,pinecone
+SK114,pgvector
+SK114,faiss
+SK114,chroma
+SK114,weaviate
+SK114,vector search
+SK115,statistics
+SK115,hypothesis testing
+SK115,a/b testing
+SK116,pandas
+SK116,numpy
+SK116,data wrangling
+SK117,linear programming
+SK117,optimization
+SK117,or-tools
+SK117,route optimization
+SK118,powerbi
+SK118,dax
+SK118,power query
+SK119,tableau desktop
+SK120,functional testing
+SK120,regression testing
+SK120,test case design
+SK121,selenium
+SK124,mobile automation
+SK125,restassured
+SK126,newman
+SK127,api automation
+SK127,web services testing
+SK128,jmeter
+SK129,load testing
+SK129,stress testing
+SK129,gatling
+SK129,k6
+SK131,bdd
+SK131,cucumber
+SK131,gherkin
+SK132,automation framework
+SK132,hybrid framework
+SK132,page object model
+SK133,mobile testing
+SK133,device testing
+SK133,browserstack
+SK134,data validation
+SK134,etl testing
+SK134,great expectations
+SK135,sfdc admin
+SK135,salesforce admin
+SK135,flows
+SK136,lwc
+SK136,aura components
+SK137,service cloud
+SK137,omni-channel
+SK138,sales cloud
+SK138,cpq
+SK139,mulesoft anypoint
+SK139,dataweave
+SK140,sap pi/po
+SK140,sap cpi
+SK140,idoc
+SK140,bapi
+SK141,appsec
+SK141,secure coding
+SK141,threat modeling
+SK142,owasp
+SK143,pen testing
+SK143,vapt
+SK143,ethical hacking
+SK144,burp
+SK145,splunk
+SK145,siem
+SK145,microsoft sentinel
+SK145,qradar
+SK146,iam
+SK146,okta
+SK146,azure ad
+SK146,entra id
+SK146,sso
+SK146,oauth2
+SK146,keycloak
+SK147,cspm
+SK147,aws security hub
+SK147,defender for cloud
+SK148,sast
+SK148,dast
+SK148,sonarqube
+SK148,snyk
+SK148,checkmarx
+SK149,iso 27001
+SK149,soc 2
+SK149,compliance audit
+SK150,scrum
+SK150,agile
+SK150,sprint planning
+SK152,jira software
+SK152,jira align
+SK154,client management
+SK154,client communication
+SK155,raid log
+SK155,risk mitigation
+SK156,estimation
+SK156,project planning
+SK156,wbs
+SK157,scaled agile
+SK157,pi planning
+SK158,budgeting
+SK158,p&l
+SK158,project financials
+SK159,people management
+SK159,mentoring
+SK160,ms project
+SK160,mpp
+SK161,itil
+SK161,servicenow
+SK161,incident management
+SK161,sla management
+SK162,requirements gathering
+SK162,brd
+SK162,frd
+SK163,user stories
+SK163,backlog grooming
+SK164,bpmn
+SK164,process mapping
+SK164,visio
+SK165,uml diagrams
+SK165,sequence diagrams
+SK166,uat
+SK167,product owner
+SK167,backlog management
+SK168,fit-gap analysis
+SK169,figjam
+SK170,xd
+SK171,visual design
+SK171,interaction design
+SK172,usability testing
+SK172,user interviews
+SK173,wireframes
+SK173,prototyping
+SK173,mockups
+SK174,component library
+SK174,style guide
+SK175,wcag
+SK175,a11y
+SK175,accessibility testing
+SK176,upi
+SK176,payments
+SK176,imps
+SK176,neft
+SK176,rtgs
+SK176,npci
+SK176,card payments
+SK177,cbs
+SK177,finacle
+SK177,flexcube
+SK177,t24
+SK178,lending
+SK178,los
+SK178,lms
+SK178,loan management
+SK179,regulatory reporting
+SK179,basel iii
+SK179,xbrl
+SK179,rbi returns
+SK180,aml
+SK180,kyc
+SK180,anti money laundering
+SK180,ckyc
+SK181,capital markets
+SK181,wealth management
+SK181,mutual funds
+SK181,trading
+SK182,insurance
+SK182,policy administration
+SK182,claims
+SK182,underwriting
+SK183,fhir
+SK183,hl7
+SK183,healthcare interoperability
+SK184,claims adjudication
+SK184,edi 837
+SK184,hipaa
+SK184,payer
+SK185,gxp
+SK185,csv validation
+SK185,21 cfr part 11
+SK185,pharma compliance
+SK186,ctms
+SK186,cdisc
+SK186,sdtm
+SK186,clinical data
+SK187,pci
+SK187,card data security
+SK188,iso20022
+SK188,swift mx
+SK189,online retail
+SK189,storefront
+SK189,cart & checkout
+SK190,supply chain
+SK190,logistics
+SK190,wms
+SK190,tms
+SK191,oss/bss
+SK191,telecom billing
+SK191,rating & charging
+SK192,iot
+SK192,mqtt
+SK192,azure iot hub
+SK192,edge computing
+SK192,opc-ua
+SK193,ott
+SK193,video streaming
+SK193,hls
+SK193,drm
+SK194,ami
+SK194,smart meters
+SK194,mdms
+SK194,utilities
+SK195,mes
+SK195,shop floor
+SK195,industry 4.0
