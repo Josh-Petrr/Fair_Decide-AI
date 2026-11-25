@@ -1,6 +1,7 @@
 import { Loader2, X } from "lucide-react";
 import { useEffect, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
 
 export const cn = (...c: (string | false | null | undefined)[]) => c.filter(Boolean).join(" ");
 
@@ -173,22 +174,19 @@ export function PageHeader({ title, subtitle, actions, eyebrow }: { title: React
   );
 }
 
-export function Stat({ label, value, hint, icon, tone = "brand" }: { label: string; value: ReactNode; hint?: ReactNode; icon: ReactNode;
+/** KPI tile: the number is the hero, the hint stays quiet. With `to`, the whole tile is a link. */
+export function Stat({ to, label, value, hint, icon, tone = "brand" }: { to?: string; label: string; value: ReactNode; hint?: ReactNode; icon: ReactNode;
   tone?: "brand" | "green" | "amber" | "red" | "blue" }) {
   const t = { brand: "bg-brand-50 text-brand-600", green: "bg-emerald-50 text-emerald-600", amber: "bg-amber-50 text-amber-600",
     red: "bg-rose-50 text-rose-600", blue: "bg-sky-50 text-sky-600" }[tone];
-  return (
-    <Card className="p-5">
-      <div className="flex items-start justify-between">
-        <div>
-          <div className="text-sm text-slate-500">{label}</div>
-          <div className="mt-1 font-display text-3xl font-extrabold text-slate-900">{value}</div>
-          {hint && <div className="mt-1 text-xs text-slate-500">{hint}</div>}
-        </div>
-        <div className={cn("grid h-10 w-10 place-items-center rounded-xl", t)}>{icon}</div>
-      </div>
-    </Card>
-  );
+  const body = <>
+    <div className={cn("grid h-9 w-9 place-items-center rounded-xl", t)}>{icon}</div>
+    <div className="mt-3 font-display text-4xl font-extrabold tabular-nums tracking-tight text-slate-900">{value}</div>
+    <div className="mt-1 text-base font-semibold text-slate-700">{label}</div>
+    {hint && <div className="mt-0.5 text-sm text-slate-500">{hint}</div>}
+  </>;
+  const box = "rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm";
+  return to ? <Link to={to} className={cn(box, "transition hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-md")}>{body}</Link> : <div className={box}>{body}</div>;
 }
 
 export const fmtDate = (d?: string | null) => d ? new Date(d + (d.length === 10 ? "T00:00:00" : "")).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "-";

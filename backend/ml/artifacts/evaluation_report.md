@@ -22,8 +22,8 @@ Calibration chosen by 5-fold CV ECE on 2024: Raw ratings: none=0.086, sigmoid=0.
 | Bias-corrected + reweighing |     0.902 |                      0.749 |     15.009 |
 | Bias-corrected ratings      |     0.899 |                      0.736 |     15.009 |
 | No past ratings             |     0.854 |                      0.66  |     15.009 |
-| Random                      |     0.547 |                      0.366 |     15.009 |
-| Raw ratings                 |     0.892 |                      0.735 |     15.009 |
+| Random                      |     0.56  |                      0.368 |     15.009 |
+| Raw ratings                 |     0.894 |                      0.745 |     15.009 |
 
 ## 3. Fairness of the top-5 shortlist by gender
 
@@ -35,12 +35,31 @@ Calibration chosen by 5-fold CV ECE on 2024: Raw ratings: none=0.086, sigmoid=0.
 | ('Bias-corrected ratings', 'Male')        |            0.345 |                      0.758 |
 | ('No past ratings', 'Female')             |            0.332 |                      0.675 |
 | ('No past ratings', 'Male')               |            0.334 |                      0.652 |
-| ('Raw ratings', 'Female')                 |            0.288 |                      0.68  |
-| ('Raw ratings', 'Male')                   |            0.358 |                      0.764 |
+| ('Raw ratings', 'Female')                 |            0.288 |                      0.685 |
+| ('Raw ratings', 'Male')                   |            0.358 |                      0.777 |
 
-Equal-opportunity gap: Raw ratings = 0.083, Bias-corrected ratings = 0.063, Bias-corrected + reweighing = 0.019, No past ratings = 0.023
+Equal-opportunity gap: Raw ratings = 0.092, Bias-corrected ratings = 0.063, Bias-corrected + reweighing = 0.019, No past ratings = 0.023
 
 **Production model: Bias-corrected + reweighing**
+
+## 3b. Classification quality on the test period (F1)
+
+A person is predicted to succeed when the score passes a cut-off. The cut-off maximises F1 on the 2024 validation year and is then applied unchanged to 2025-26. F1 combines precision (of those predicted to succeed, how many did) and recall (of those who succeeded, how many were found). F1_at_50 uses a plain 50% cut-off.
+
+|                             |   Threshold |   Precision |   Recall |    F1 |   Accuracy |   F1_at_50 |
+|:----------------------------|------------:|------------:|---------:|------:|-----------:|-----------:|
+| Raw ratings                 |        0.37 |       0.65  |    0.813 | 0.723 |      0.703 |      0.714 |
+| Bias-corrected ratings      |        0.32 |       0.643 |    0.833 | 0.726 |      0.701 |      0.717 |
+| Bias-corrected + reweighing |        0.3  |       0.627 |    0.852 | 0.722 |      0.689 |      0.713 |
+| No past ratings             |        0.37 |       0.637 |    0.806 | 0.711 |      0.69  |      0.686 |
+| Baseline formula            |        0.59 |       0.611 |    0.819 | 0.7   |      0.666 |      0.711 |
+
+F1 by gender for the production model (same cut-off 0.30):
+
+|        |   Precision |   Recall |    F1 |
+|:-------|------------:|---------:|------:|
+| Female |       0.584 |    0.909 | 0.711 |
+| Male   |       0.649 |    0.827 | 0.727 |
 
 ## 4. Feature importance (gain) of the production model
 

@@ -67,6 +67,7 @@ export interface Candidate extends Person {
   factors: Factor[]; skills: SkillMatch[]; preferred: { skill: string; has: boolean }[]; experience_years: number;
   domain_projects: number; similar_projects: { project: string; client_id: string; industry: string; similarity: number }[];
   past_rating: number | null; certifications: string[]; workload_after: number; flags: string[]; explanation: string;
+  approvers?: Approver[];
 }
 export interface RoleView {
   role_id: string; title: string; project_id: string; project_name: string; client_name: string; industry: string;
@@ -76,11 +77,23 @@ export interface RoleView {
 }
 export interface RecResult {
   request_id?: number; role: RoleView; candidates: Candidate[];
+  access?: { can_allocate: boolean; can_suggest: boolean; head: string | null; open_requests: Record<string, string> };
   near_misses: (Person & { success_probability: number; blocker: string })[];
   pool: { considered: number; eligible: number; excluded: number; exclusion_reasons: Record<string, number> };
   fairness: { women_in_eligible_pool: number | null; women_in_shortlist: number | null; representation_ratio: number | null; status: string; note: string };
   model: { variant: string; test_auc: number };
 }
+export interface Approver { user_id: string; name: string; designation?: string; relation: string; status?: string; comment?: string | null }
+export interface AllocationItem {
+  allocation_id: number; status: string; reason: string; source: "shortlist" | "eligibility" | "suggestion"; project_role_id: string; employee_id: string; employee_name: string;
+  designation: string; workload: number; role_title: string; allocation_pct: number; start_date: string; project_name: string;
+  requester: string; approvers: Approver[] | null;
+}
+export interface Suggestion {
+  suggestion_id: number; project_role_id: string; employee_id: string; employee_name: string; designation: string; note: string | null;
+  role_title: string; project_name: string; suggested_by: string; approvers: Approver[];
+}
+export interface Inbox { to_approve: AllocationItem[]; ready: AllocationItem[]; waiting: AllocationItem[]; rejected: AllocationItem[]; suggestions: Suggestion[] }
 export interface Meta {
   as_of: string;
   skills: { skill_id: string; skill_name: string; category: string }[];
@@ -88,4 +101,5 @@ export interface Meta {
   clients: { client_id: string; client_name: string; industry: string }[];
   families: { role_family: string; practice: string }[];
   locations: string[];
+  team_size: number;
 }

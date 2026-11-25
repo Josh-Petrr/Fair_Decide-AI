@@ -1,17 +1,15 @@
-import { ArrowLeft, Bot, CalendarDays, Columns3, Filter, FlaskConical, Scale, ShieldCheck, UserX, Users } from "lucide-react";
+import { ArrowLeft, Bot, CalendarDays, Columns3, Eye, Filter, FlaskConical, Scale, ShieldCheck, UserX, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import CandidateCard from "../components/CandidateCard";
-import { ApproveDialog, CompareDialog, RejectDialog } from "../components/Dialogs";
+import { CompareDialog, RejectDialog, RequestDialog, SuggestDialog } from "../components/Dialogs";
 import { Assistant, WhatIfPanel, WhyNot, type WhatIfState } from "../components/Tools";
 import { Avatar, Badge, Button, Card, Empty, Portal, Spinner, cn, fmtDate } from "../components/ui";
 import { api, useApi, type Meta, type RecResult } from "../lib/api";
-import { useAuth } from "../lib/auth";
 import { useLive } from "../lib/live";
 
 export default function Recommend() {
   const { roleId = "" } = useParams();
-  const { user } = useAuth();
   const { last } = useLive();
   const { data: meta } = useApi<Meta>("/meta");
   const [base, setBase] = useState<RecResult | null>(null);       // the real recommendation (audited)
@@ -19,7 +17,7 @@ export default function Recommend() {
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<string[]>([]);
   const [busyWhatIf, setBusyWhatIf] = useState(false);
-  const [dialog, setDialog] = useState<"approve" | "reject" | "compare" | null>(null);
+  const [dialog, setDialog] = useState<"approve" | "reject" | "compare" | "suggest" | null>(null);
   const [assistant, setAssistant] = useState(false);
 
   const load = () => api<RecResult>(`/demands/${roleId}/recommendations`)
@@ -29,7 +27,7 @@ export default function Recommend() {
 
   // another manager assigned someone on this demand -> refresh so nobody is double-booked
   useEffect(() => {
-    if (last?.type === "decision" && last.data.role_id === roleId && dialog !== "approve") load();
+    if ((last?.type === "decision" || last?.type === "allocation") && last.data.role_id === roleId && dialog !== "approve") load();
   }, [last]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (error) return <Empty title="Could not load recommendations" text={error} />;
@@ -37,16 +35,18 @@ export default function Recommend() {
 
   const r = shown.role;
   const whatIf = shown !== base;
-  const remaining = Math.max(0, base.role.headcount - base.role.filled);
+  const access = base.access;
+  const openRequests = access?.open_requests ?? {};
+  const remaining = Math.max(0, base.role.headcount - base.role.filled - Object.keys(openRequests).length);
   const chosen = base.candidates.filter((c) => selected.includes(c.employee_id));
   const toggle = (id: string) => setSelected((s) => s.includes(id) ? s.filter((x) => x !== id) : [...s, id]);
-  const isManager = user?.app_role === "manager";
+  const canAllocate = !!access?.can_allocate;
 
   const runWhatIf = async (w: WhatIfState) => {
     setBusyWhatIf(true);
     try {
       setShown(await api<RecResult>(`/demands/${roleId}/whatif`, { json: {
-        allocation: w.allocation, start_date: w.start_date, min_experience: w.min_experience,
+        allocation: w.allocation, start_date: w.start_date, min_experience: w.min_experience, mandatory_certs: w.certs,
         mandatory_skills: w.skills.map((s) => ({ skill_id: s.skill_id, min_level: s.min_level })) } }));
     } finally { setBusyWhatIf(false); }
   };
@@ -86,6 +86,13 @@ export default function Recommend() {
           </div>
         </div>
       </Card>
+
+      {!canAllocate && (
+        <div className="mt-4 flex items-center gap-3 rounded-xl border border-sky-200 bg-sky-50 px-4 py-3 text-sm text-sky-800">
+          <Eye className="h-4 w-4 shrink-0" /> View only. Only the project head, <b>{access?.head}</b>, can allocate people here.
+          {access?.can_suggest && <Button size="sm" variant="secondary" className="ml-auto shrink-0" onClick={() => setDialog("suggest")}>I have someone free</Button>}
+        </div>
+      )}
 
       {whatIf && (
         <div className="mt-4 flex items-center gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
@@ -141,7 +148,7 @@ export default function Recommend() {
               text="Look at the near misses below, or relax a requirement in the what-if panel." /></Card>
           ) : shown.candidates.map((c) => (
             <CandidateCard key={c.employee_id} c={c} selected={selected.includes(c.employee_id)} onToggle={() => toggle(c.employee_id)}
-              canSelect={!whatIf && isManager && selected.length < remaining} />
+              canSelect={!whatIf && canAllocate && selected.length < remaining} requested={openRequests[c.employee_id]} />
           ))}
 
           {shown.near_misses.length > 0 && (
@@ -175,7 +182,7 @@ export default function Recommend() {
       </div>
 
       {/* action bar */}
-      {isManager && !whatIf && (
+      {canAllocate && !whatIf && (
         <Portal>
         <div className="fixed bottom-0 left-0 right-0 z-30 border-t border-slate-200 bg-white/90 backdrop-blur lg:left-64">
           <div className="mx-auto flex max-w-[1400px] items-center gap-3 px-6 py-3">
@@ -187,15 +194,16 @@ export default function Recommend() {
             <div className="ml-auto flex gap-2">
               <Button variant="ghost" onClick={() => setDialog("reject")}>Reject</Button>
               <Button variant="secondary" disabled={chosen.length < 2} onClick={() => setDialog("compare")}><Columns3 className="h-4 w-4" /> Compare</Button>
-              <Button disabled={!chosen.length} onClick={() => setDialog("approve")}>Approve & assign</Button>
+              <Button disabled={!chosen.length} onClick={() => setDialog("approve")}>Request allocation</Button>
             </div>
           </div>
         </div>
         </Portal>
       )}
 
-      <ApproveDialog open={dialog === "approve"} onClose={() => { setDialog(null); load(); }} role={base.role} people={chosen} requestId={base.request_id} onDone={() => {}} />
+      <RequestDialog open={dialog === "approve"} onClose={() => { setDialog(null); load(); }} role={base.role} people={chosen} requestId={base.request_id} onDone={() => {}} />
       <RejectDialog open={dialog === "reject"} onClose={() => setDialog(null)} role={base.role} requestId={base.request_id} onDone={load} />
+      <SuggestDialog open={dialog === "suggest"} onClose={() => setDialog(null)} roleId={roleId} head={access?.head ?? ""} />
       <CompareDialog open={dialog === "compare"} onClose={() => setDialog(null)} people={chosen} />
       {assistant && <Assistant roleId={roleId} nearMiss={shown.near_misses[0]?.name} onClose={() => setAssistant(false)} />}
     </div>

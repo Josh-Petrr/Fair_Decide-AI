@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 from sklearn.isotonic import IsotonicRegression
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import brier_score_loss, roc_auc_score
+from sklearn.metrics import brier_score_loss, f1_score, precision_score, recall_score, roc_auc_score
 from sklearn.model_selection import KFold
 
 from ..config import ARTIFACTS, ROOT
@@ -79,6 +79,18 @@ def apply_calibrator(cal, p):
     return p
 
 
+def best_threshold(y, p):
+    """Cut-off that maximises F1, chosen on the validation year so the test score stays honest."""
+    grid = np.arange(0.05, 0.96, 0.01)
+    return float(grid[int(np.argmax([f1_score(y, p >= t, zero_division=0) for t in grid]))])
+
+
+def at_threshold(y, p, t):
+    pred = p >= t
+    return dict(Threshold=t, Precision=precision_score(y, pred, zero_division=0), Recall=recall_score(y, pred, zero_division=0),
+                F1=f1_score(y, pred, zero_division=0), Accuracy=float((pred == y).mean()), F1_at_50=f1_score(y, p >= 0.5, zero_division=0))
+
+
 def reweigh(df):
     """Kamiran & Calders reweighing: weight = P(group) * P(label) / P(group, label), so that labels become
     independent of protected group in training. Group is read offline from the restricted schema only."""
@@ -143,7 +155,7 @@ def main():
     groups = frame("""SELECT s.employee_id, s.gender, e.career_break_months > 0 AS brk
                       FROM restricted.employee_sensitive_attributes s JOIN employees e USING (employee_id)""")
     GROUP_OF.update({r.employee_id: f"{r.gender}|{'break' if r.brk else 'no-break'}" for r in groups.itertuples()})
-    variants, clf, cv_rows = {}, [], {}
+    variants, clf, cv_rows, cls, probs = {}, [], {}, {}, {}
     for name, feats in VARIANTS.items():
         model, cal, cv = fit_variant(feats, tr, va, weighted=name in WEIGHTED)
         variants[name] = (model, cal, feats)
@@ -152,7 +164,11 @@ def main():
         clf.append(dict(model=name, AUC=roc_auc_score(y, p), Brier=brier_score_loss(y, p),
                         ECE_raw=ece(y, raw), ECE_final=ece(y, p), calibration=cal["kind"], trees=model.best_iteration))
         cv_rows[name] = cv
+        probs[name] = p
+        cls[name] = at_threshold(y, p, best_threshold(va.success.values, apply_calibrator(cal, model.predict(va[feats]))))
     clf.append(dict(model="Baseline formula", AUC=roc_auc_score(y, baseline_score(te))))
+    cls["Baseline formula"] = at_threshold(y, baseline_score(te).values, best_threshold(va.success.values, baseline_score(va).values))
+    cls = pd.DataFrame(cls).T
     clf = pd.DataFrame(clf).set_index("model")
 
     store = Store()
@@ -174,7 +190,12 @@ def main():
     joblib.dump(cal, ARTIFACTS / "calibrator.joblib")
     meta = dict(variant=chosen, features=feats, calibration=cal["kind"], trees=model.best_iteration,
                 test_auc=round(float(clf.loc[chosen, "AUC"]), 4), base_rate=round(float(tr.success.mean()), 4),
-                equal_opportunity_gap=round(float(gaps[chosen]), 4))
+                equal_opportunity_gap=round(float(gaps[chosen]), 4),
+                test_f1=round(float(cls.loc[chosen, "F1"]), 4), test_precision=round(float(cls.loc[chosen, "Precision"]), 4),
+                test_recall=round(float(cls.loc[chosen, "Recall"]), 4), f1_threshold=round(float(cls.loc[chosen, "Threshold"]), 2))
+    gender = te.employee_id.map(sens.set_index("employee_id").gender).values
+    t = cls.loc[chosen, "Threshold"]
+    by_gender = pd.DataFrame({g: at_threshold(y[gender == g], probs[chosen][gender == g], t) for g in ("Female", "Male")}).T
     (ARTIFACTS / "model_meta.json").write_text(json.dumps(meta, indent=2))
     imp = pd.Series(model.feature_importance("gain"), index=feats).sort_values(ascending=False)
 
@@ -191,6 +212,13 @@ def main():
              fair.round(3).to_markdown(), "",
              f"Equal-opportunity gap: " + ", ".join(f"{m} = {g:.3f}" for m, g in gaps.items()), "",
              f"**Production model: {chosen}**", "",
+             "## 3b. Classification quality on the test period (F1)", "",
+             "A person is predicted to succeed when the score passes a cut-off. The cut-off maximises F1 on the 2024 validation "
+             "year and is then applied unchanged to 2025-26. F1 combines precision (of those predicted to succeed, how many did) "
+             "and recall (of those who succeeded, how many were found). F1_at_50 uses a plain 50% cut-off.", "",
+             cls.astype(float).round(3).to_markdown(), "",
+             f"F1 by gender for the production model (same cut-off {t:.2f}):", "",
+             by_gender[["Precision", "Recall", "F1"]].astype(float).round(3).to_markdown(), "",
              "## 4. Feature importance (gain) of the production model", "",
              (imp / imp.sum()).round(3).to_frame("share").to_markdown()]
     (ARTIFACTS / "evaluation_report.md").write_text("\n".join(lines), encoding="utf-8")

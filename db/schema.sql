@@ -3,11 +3,11 @@
 
 CREATE EXTENSION IF NOT EXISTS vector;
 
-DROP TABLE IF EXISTS audit_log, notifications, assignment_decisions, recommendation_candidates,
+DROP TABLE IF EXISTS staffing_suggestions, allocation_approvals, allocation_requests, audit_log, notifications, assignment_decisions, recommendation_candidates,
     recommendation_requests, employee_profile_embeddings, project_embeddings, skill_embeddings,
     rating_adjustments, assignment_feedback, assignments, project_role_certifications, project_role_skills, project_roles,
     projects, app_users, employee_leaves, employee_certifications, employee_skills, employees, clients,
-    policies, certification_skills, certifications, skill_aliases, skills, app_settings, baseline_role_status CASCADE;
+    policies, certification_skills, certifications, skill_aliases, skills, app_settings, baseline_role_status, baseline_reporting, baseline_people, baseline_projects, baseline_users CASCADE;
 DROP FUNCTION IF EXISTS fd_as_of(), fd_block_modification() CASCADE;
 DROP SCHEMA IF EXISTS restricted CASCADE;
 CREATE SCHEMA restricted;   -- protected attributes: fairness audits only, never model features
@@ -239,7 +239,9 @@ CREATE TABLE app_users (
     full_name   text NOT NULL,
     email       text NOT NULL UNIQUE,
     app_role    text NOT NULL CHECK (app_role IN ('manager','hr_admin','auditor','admin')),
-    is_active   boolean NOT NULL DEFAULT true
+    is_active   boolean NOT NULL DEFAULT true,
+    start_date  date,                         -- manager from
+    end_date    date                          -- left the role (login closed)
 );
 
 -- ============================================================ written by the application (empty at load)
@@ -292,6 +294,46 @@ CREATE TABLE notifications (
     created_at      timestamptz NOT NULL DEFAULT now(),
     sent_at         timestamptz
 );
+
+CREATE TABLE allocation_requests (           -- a project head's request, one row per employee
+    allocation_id   bigserial PRIMARY KEY,
+    request_id      bigint REFERENCES recommendation_requests,
+    project_role_id text NOT NULL REFERENCES project_roles,
+    employee_id     text NOT NULL REFERENCES employees,
+    requested_by    text NOT NULL REFERENCES app_users,
+    reason          text NOT NULL,
+    notes           text,
+    source          text NOT NULL DEFAULT 'shortlist' CHECK (source IN ('shortlist','eligibility','suggestion')),
+    status          text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected','cancelled','sent')),
+    decision_id     bigint REFERENCES assignment_decisions,
+    created_at      timestamptz NOT NULL DEFAULT now(),
+    updated_at      timestamptz NOT NULL DEFAULT now()
+);
+CREATE UNIQUE INDEX ux_allocation_open ON allocation_requests (project_role_id, employee_id) WHERE status IN ('pending','approved');
+
+CREATE TABLE allocation_approvals (           -- everyone who must sign off on a request
+    allocation_id bigint REFERENCES allocation_requests ON DELETE CASCADE,
+    approver_id   text REFERENCES app_users,
+    position      smallint NOT NULL,
+    relation      text NOT NULL,
+    status        text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected','closed')),
+    comment       text,
+    decided_at    timestamptz,
+    PRIMARY KEY (allocation_id, approver_id)
+);
+CREATE INDEX ix_approvals_inbox ON allocation_approvals (approver_id) WHERE status = 'pending';
+
+CREATE TABLE staffing_suggestions (          -- "I have someone free" from another manager to a project head
+    suggestion_id   bigserial PRIMARY KEY,
+    project_role_id text NOT NULL REFERENCES project_roles,
+    employee_id     text NOT NULL REFERENCES employees,
+    suggested_by    text NOT NULL REFERENCES app_users,
+    suggested_to    text NOT NULL REFERENCES app_users,
+    note            text,
+    status          text NOT NULL DEFAULT 'new' CHECK (status IN ('new','accepted','dismissed')),
+    created_at      timestamptz NOT NULL DEFAULT now()
+);
+CREATE UNIQUE INDEX ux_suggestion_open ON staffing_suggestions (project_role_id, employee_id) WHERE status = 'new';
 
 CREATE TABLE audit_log (
     audit_id   bigserial PRIMARY KEY,

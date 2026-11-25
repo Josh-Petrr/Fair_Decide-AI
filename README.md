@@ -16,6 +16,20 @@ powershell -ExecutionPolicy Bypass -File start.ps1
 This starts PostgreSQL and Mailpit (Docker), resets the demo data, launches the API (:8000) and the web app (:5173), and
 opens the app and the demo inbox (http://localhost:8025, where "sent" emails arrive; nothing leaves the machine).
 
+**Signing in:** pick a name, then enter that person's first name as the password (e.g. Afreen Inamdar → `Afreen`, not case-sensitive). This is a demo rule only, not real security.
+
+**Admin:** sign in as *Josh Peter* (password `Josh`) or *Shreya Sharma* (password `Shreya`) to open the **Admin** page: promote an employee or hire a new manager, add employees with their skills, change reporting lines, and hand a leaving manager's projects, team, approvals and requests to a successor in one step. `admin reset` undoes all of it.
+
+**Who can do what:** every manager can view all people and projects, but only a project's head (its project manager) can
+allocate people to it. A request goes to the head's manager and, if the employee is in another team, to the employee's
+manager and the person above them. Their names are shown before the request is sent, and approvals appear under
+*Notifications* on the dashboard. Once everyone approves, the head clicks **Send**: only then is the database updated and
+the email sent. The dashboard and *Staffing demands* start on your own projects; *All projects* shows the rest. On someone
+else's project, a manager with free people in their team can click **I have someone free** to notify the head, who can turn
+it into a normal request. The offer counts as that manager's own approval; everyone else on the route, including their manager, still approves. To test someone you already have in mind, open their profile and click **Check eligibility**: pick one of your roles, adjust the requirements if you like, and see the result and their workload. Nothing is saved unless you click **Request allocation**, which starts the same approvals. Employees report to the manager of their project, and *My team* shows everyone below you at every level; search always covers all employees. When a request is sent, the person moves to that project's head if it is their biggest allocation.
+
+To try two people at once, use a normal and a private browser window, since a browser keeps one sign-in.
+
 ## First-time setup
 
 ```powershell
@@ -43,6 +57,7 @@ FAIRDECIDE_EMBEDDING_MODEL=all-MiniLM-L6-v2 # 384-dim; changing it requires re-r
 | Matching engine | Policy hard-filter → point-in-time features → LightGBM → SHAP, confidence, evidence, flags, fairness check | `backend/engine/` |
 | Semantic similarity | all-MiniLM-L6-v2 (fastembed/ONNX, local) + pgvector | `backend/engine/embeddings.py` |
 | Language assistant | Groq (model set in `.env`, e.g. Qwen) for request parsing and Q&A, names anonymised; rule-based fallback | `backend/llm/` |
+| Approvals | Request -> approvers sign off -> head sends; routing follows the reporting line | `backend/services/approvals.py` |
 | Decision service | One transaction: assignments + demand status + decision + audit + queued email, under a lock | `backend/services/` |
 | ML pipeline | preprocess → bias audit (rating correction) → reweighing → train/compare/calibrate/evaluate | `backend/ml/` |
 | Data | Synthetic Indian IT-services company (1,450 people, 754 projects, real certifications) | `datagen/`, `data/` |
@@ -61,7 +76,7 @@ Full reports: `backend/ml/artifacts/*.md` (also shown on the app's *AI transpare
 ## Tests
 
 ```powershell
-.venv\Scripts\python -m tests.e2e_flow          # 19 API checks of the full business flow
+.venv\Scripts\python -m tests.e2e_flow          # API checks of the full business flow
 .venv\Scripts\python -m tests.ui_flow shots     # real-browser walkthrough with screenshots
 .venv\Scripts\python -m backend.admin reset     # undo test/demo changes afterwards
 ```

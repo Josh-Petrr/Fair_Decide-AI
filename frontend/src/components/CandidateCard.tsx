@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import type { Candidate } from "../lib/api";
 import { Avatar, Badge, Card, FactorBars, LevelDots, LoadBar, Ring, cn } from "./ui";
 
-export default function CandidateCard({ c, selected, onToggle, canSelect }: { c: Candidate; selected: boolean; onToggle: () => void; canSelect: boolean }) {
+export default function CandidateCard({ c, selected, onToggle, canSelect, requested }: { c: Candidate; selected: boolean; onToggle: () => void; canSelect: boolean; requested?: string }) {
   const [open, setOpen] = useState(false);
   const medal = ["text-amber-500", "text-slate-400", "text-orange-400"][c.rank - 1];
   return (
@@ -75,11 +75,14 @@ export default function CandidateCard({ c, selected, onToggle, canSelect }: { c:
             </div>
           </div>
           <LoadBar now={c.workload_on_start} after={c.workload_after} />
+          {c.approvers && !requested && <div className="text-xs text-slate-500">{c.approvers.length
+            ? <>Needs approval from <b className="font-medium text-slate-700">{c.approvers.map((a) => a.name).join(", ")}</b></> : "No approval needed"}</div>}
+          {requested ? <Badge tone="amber" className="mt-auto justify-center py-2">{requested === "approved" ? "Approved - ready to send" : "Waiting for approval"}</Badge> :
           <button disabled={!canSelect && !selected} onClick={onToggle}
             className={cn("mt-auto inline-flex items-center justify-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-40",
               selected ? "bg-brand-600 text-white" : "bg-brand-50 text-brand-700 hover:bg-brand-100")}>
             {selected ? <><Check className="h-4 w-4" /> Selected</> : "Select"}
-          </button>
+          </button>}
         </div>
       </div>
       <button onClick={() => setOpen(!open)} className="flex w-full items-center justify-center gap-1 border-t border-slate-100 py-2 text-xs font-medium text-slate-500 hover:bg-slate-50">

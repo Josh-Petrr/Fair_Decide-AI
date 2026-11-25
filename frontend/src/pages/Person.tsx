@@ -1,12 +1,17 @@
-import { ArrowLeft, Award, BadgeCheck, CalendarOff, FolderGit2, Mail, MapPin, Star } from "lucide-react";
+import { ArrowLeft, Award, BadgeCheck, CalendarOff, ClipboardCheck, FolderGit2, Mail, MapPin, Star, UserRound } from "lucide-react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Avatar, Badge, Card, Empty, LevelDots, LoadBar, Spinner, fmtDate } from "../components/ui";
+import EligibilityDialog from "../components/Eligibility";
+import { Avatar, Badge, Button, Card, Empty, LevelDots, LoadBar, Spinner, fmtDate } from "../components/ui";
 import { useApi } from "../lib/api";
+import { useAuth } from "../lib/auth";
 import { useLive } from "../lib/live";
 
 export default function Person() {
   const { employeeId } = useParams();
   const { version } = useLive();
+  const { user } = useAuth();
+  const [checking, setChecking] = useState(false);
   const { data, loading } = useApi<any>(`/employees/${employeeId}`, [version]);
   if (loading && !data) return <Spinner />;
   if (!data) return <Empty title="Employee not found" />;
@@ -15,6 +20,7 @@ export default function Person() {
   const done = data.assignments.filter((a: any) => a.status === "Completed");
   return (
     <div className="animate-rise">
+      {checking && <EligibilityDialog open onClose={() => setChecking(false)} employeeId={e.employee_id} name={e.full_name} />}
       <button onClick={() => history.back()} className="mb-4 inline-flex items-center gap-1 text-sm text-slate-500 hover:text-brand-600"><ArrowLeft className="h-4 w-4" /> Back</button>
       <Card className="p-6">
         <div className="flex flex-wrap items-center gap-5">
@@ -24,23 +30,27 @@ export default function Person() {
             <div className="text-slate-600">{e.designation} · {e.practice}</div>
             <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500">
               <span><MapPin className="mr-1 inline h-4 w-4" />{e.location} · {e.work_mode}</span>
+              {e.manager_name && <span><UserRound className="mr-1 inline h-4 w-4" />Reports to <Link to={`/people/${e.reporting_manager_id}`} className="font-medium text-brand-600 hover:underline">{e.manager_name}</Link></span>}
               <span><Mail className="mr-1 inline h-4 w-4" />{e.email ?? <span className="text-rose-600">no email on record</span>}</span>
               <span>{e.employee_id} · {e.job_level} · joined {fmtDate(e.date_of_joining)}</span>
               <span>{e.total_experience_years} yrs experience</span>
             </div>
           </div>
-          <div className="w-64">
+          <div className="w-full sm:w-64">
             {e.employment_status !== "Active" && <Badge tone="amber" className="mb-2">{e.employment_status}{e.exit_date ? ` · ${fmtDate(e.exit_date)}` : ""}</Badge>}
             <LoadBar now={e.current_allocation_pct ?? 0} />
             <div className="mt-2 flex gap-3 text-xs text-slate-500">
               <span>{e.active_project_count ?? 0} active project(s)</span>
               {e.last_appraisal_rating && <span><Star className="inline h-3 w-3" /> {e.last_appraisal_rating}/5 ({e.appraisal_cycle})</span>}
             </div>
+            {user?.app_role === "manager" && e.employment_status !== "Exited" && (
+              <Button className="mt-3 w-full" onClick={() => setChecking(true)}><ClipboardCheck className="h-4 w-4" /> Check eligibility</Button>
+            )}
           </div>
         </div>
       </Card>
 
-      <div className="mt-6 grid gap-6 xl:grid-cols-[1.2fr_1fr]">
+      <div className="mt-6 grid grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
         <Card className="p-5">
           <h3 className="mb-3 font-bold text-slate-800">Skills</h3>
           <div className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
@@ -87,7 +97,7 @@ export default function Person() {
         <h3 className="mb-3 font-bold text-slate-800">Project history</h3>
         <div className="space-y-3">
           {done.map((a: any) => (
-            <div key={a.assignment_id} className="grid grid-cols-[1fr_auto] gap-2 border-l-2 border-brand-200 pl-4">
+            <div key={a.assignment_id} className="grid grid-cols-[minmax(0,1fr)_auto] gap-2 border-l-2 border-brand-200 pl-4">
               <div>
                 <div className="font-medium text-slate-800">{a.project_name} <span className="font-normal text-slate-400">· {a.client_name}</span></div>
                 <div className="text-xs text-slate-500">{a.role_title} · {fmtDate(a.start_date)} → {fmtDate(a.end_date)} · {a.industry}{a.release_reason ? ` · ${a.release_reason}` : ""}</div>

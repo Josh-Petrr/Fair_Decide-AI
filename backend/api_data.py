@@ -5,16 +5,21 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
 from . import state
-from .auth import current_user, make_token, manager
+from .auth import check_password, current_user, make_token, manager
 from .db import conn, fetch_all, fetch_one
 from .engine.embeddings import embed, project_text, to_pg
 
 router = APIRouter(prefix="/api")
 
+TEAM = """WITH RECURSIVE team AS (
+    SELECT employee_id FROM employees WHERE reporting_manager_id = %(me)s
+    UNION SELECT e.employee_id FROM employees e JOIN team t ON e.reporting_manager_id = t.employee_id)"""
+
 
 # ------------------------------------------------------------------ auth
 class Login(BaseModel):
     user_id: str
+    password: str
 
 
 @router.get("/auth/users")
@@ -28,8 +33,8 @@ def demo_users():
 def login(body: Login):
     user = fetch_one("SELECT user_id, full_name, app_role, employee_id FROM app_users WHERE user_id = %s AND is_active",
                      (body.user_id,))
-    if not user:
-        raise HTTPException(404, "User not found")
+    if not user or not check_password(user["full_name"], body.password):
+        raise HTTPException(401, "Incorrect password")
     return dict(token=make_token(user["user_id"]), user=user)
 
 
@@ -48,6 +53,8 @@ def meta(user=Depends(current_user)):
         clients=fetch_all("SELECT client_id, client_name, industry FROM clients ORDER BY client_name"),
         families=fetch_all("SELECT DISTINCT role_family, practice FROM employees ORDER BY practice"),
         locations=[r["location"] for r in fetch_all("SELECT DISTINCT location FROM employees ORDER BY 1")],
+        team_size=fetch_one(f"""{TEAM} SELECT count(*) AS n FROM team JOIN employees e USING (employee_id)
+                                WHERE e.employment_status <> 'Exited'""", dict(me=user["employee_id"]))["n"],
     )
 
 
@@ -58,6 +65,8 @@ def dashboard(user=Depends(current_user)):
         SELECT (SELECT count(*) FROM employees WHERE employment_status <> 'Exited') AS headcount,
                (SELECT count(*) FROM v_employee_current_load l JOIN employees e USING (employee_id)
                  WHERE l.current_allocation_pct = 0 AND e.employment_status = 'Active') AS bench,
+               (SELECT count(*) FROM v_employee_current_load l JOIN employees e USING (employee_id)
+                 WHERE l.current_allocation_pct = 0 AND e.employment_status <> 'Active') AS away,
                (SELECT count(*) FROM v_employee_current_load WHERE current_allocation_pct > 100) AS overallocated,
                (SELECT count(*) FROM v_employee_current_load WHERE active_project_count >= 2) AS multi_project,
                (SELECT count(*) FROM projects WHERE status = 'Active') AS active_projects,
@@ -67,21 +76,24 @@ def dashboard(user=Depends(current_user)):
                (SELECT round(avg(LEAST(current_allocation_pct, 100))) FROM v_employee_current_load) AS utilisation""")
     by_practice = fetch_all("""
         SELECT e.practice, count(*) AS people, round(avg(LEAST(l.current_allocation_pct, 100))) AS utilisation,
-               count(*) FILTER (WHERE l.current_allocation_pct = 0) AS bench,
+               count(*) FILTER (WHERE l.current_allocation_pct = 0 AND e.employment_status = 'Active') AS bench,
+               count(*) FILTER (WHERE l.current_allocation_pct = 0 AND e.employment_status <> 'Active') AS away,
                count(*) FILTER (WHERE l.current_allocation_pct > 100) AS overallocated
         FROM employees e JOIN v_employee_current_load l USING (employee_id)
-        WHERE e.employment_status = 'Active' GROUP BY e.practice ORDER BY people DESC""")
+        GROUP BY e.practice ORDER BY people DESC""")
     rolloffs = fetch_all("""
         SELECT a.employee_id, e.full_name, e.designation, p.project_name, a.end_date, a.allocation_pct
         FROM assignments a JOIN employees e USING (employee_id) JOIN projects p USING (project_id)
         WHERE a.status = 'Active' AND a.end_date BETWEEN fd_as_of() AND fd_as_of() + 30
-        ORDER BY a.end_date LIMIT 8""")
+        ORDER BY a.end_date LIMIT 5""")
     urgent = fetch_all("""
         SELECT d.project_role_id, d.role_title, d.project_name, d.start_date, d.headcount, d.priority, c.client_name
         FROM v_open_demands d JOIN clients c USING (client_id)
-        ORDER BY d.start_date, CASE d.priority WHEN 'Critical' THEN 0 WHEN 'High' THEN 1 ELSE 2 END LIMIT 8""")
+        WHERE %(me)s::text IS NULL OR d.project_manager_id = %(me)s
+        ORDER BY d.start_date, CASE d.priority WHEN 'Critical' THEN 0 WHEN 'High' THEN 1 ELSE 2 END LIMIT 5""",
+                       dict(me=user["employee_id"] if user["app_role"] == "manager" else None))
     return dict(kpi=kpi, by_practice=by_practice, rolloffs=rolloffs, urgent_demands=urgent,
-                recent_decisions=audit_list(limit=6, user=user))
+                recent_decisions=audit_list(limit=5, user=user))
 
 
 # ------------------------------------------------------------------ projects
@@ -214,19 +226,20 @@ def demands(user=Depends(current_user)):
     return fetch_all("""
         SELECT d.project_role_id, d.role_title, d.role_family, d.headcount, d.allocation_pct, d.min_experience_years,
                d.start_date, d.end_date, d.demand_type, d.demand_status, d.project_id, d.project_name, d.priority,
-               d.project_status, c.client_name,
+               d.project_status, c.client_name, d.project_manager_id = %s AS mine, h.full_name AS head_name,
                (SELECT count(*) FROM assignments a WHERE a.project_role_id = d.project_role_id
                   AND a.status IN ('Active', 'Upcoming')) AS filled,
                (SELECT string_agg(s.skill_name, ', ') FROM project_role_skills rs JOIN skills s USING (skill_id)
                  WHERE rs.project_role_id = d.project_role_id AND rs.importance = 'Mandatory') AS skills
-        FROM v_open_demands d JOIN clients c USING (client_id)
-        ORDER BY d.start_date, d.project_name""")
+        FROM v_open_demands d JOIN clients c USING (client_id) JOIN employees h ON h.employee_id = d.project_manager_id
+        ORDER BY mine DESC NULLS LAST, d.start_date, d.project_name""", (user["employee_id"],))
 
 
 # ------------------------------------------------------------------ employees
 @router.get("/employees")
-def employees(q: str | None = None, practice: str | None = None, available: bool = False, user=Depends(current_user)):
-    return fetch_all("""
+def employees(q: str | None = None, practice: str | None = None, available: bool = False, load: str | None = None,
+              scope: str | None = None, user=Depends(current_user)):
+    return fetch_all(TEAM + """
         SELECT e.employee_id, e.full_name, e.designation, e.job_level, e.practice, e.primary_skill, e.location,
                e.employment_status, e.total_experience_years, l.current_allocation_pct, l.active_project_count
         FROM employees e JOIN v_employee_current_load l USING (employee_id)
@@ -235,8 +248,12 @@ def employees(q: str | None = None, practice: str | None = None, available: bool
                           WHERE es.employee_id = e.employee_id AND s.skill_name ILIKE %(q)s))
           AND (%(p)s::text IS NULL OR e.practice = %(p)s)
           AND (NOT %(a)s OR (e.employment_status = 'Active' AND l.current_allocation_pct < 100))
-        ORDER BY l.current_allocation_pct, e.full_name LIMIT 100""",
-                     dict(q=f"%{q}%" if q else None, p=practice, a=available))
+          AND (%(l)s::text IS NULL
+               OR (%(l)s = 'free' AND e.employment_status = 'Active' AND l.current_allocation_pct = 0)
+               OR (%(l)s = 'over' AND l.current_allocation_pct > 100))
+          AND (%(s)s::text IS NULL OR (e.employee_id IN (SELECT employee_id FROM team)) = (%(s)s = 'mine'))
+        ORDER BY l.current_allocation_pct, e.full_name LIMIT 200""",
+                     dict(q=f"%{q}%" if q else None, p=practice, a=available, l=load, s=scope, me=user["employee_id"]))
 
 
 @router.get("/employees/{employee_id}")

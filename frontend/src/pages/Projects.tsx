@@ -1,6 +1,6 @@
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Badge, Card, Empty, PageHeader, Spinner, cn, fmtDate, inputCls } from "../components/ui";
 import { api } from "../lib/api";
 import { useLive } from "../lib/live";
@@ -9,7 +9,8 @@ const STATUS_TONE = { Pipeline: "brand", Active: "green", Completed: "gray" } as
 
 export default function Projects() {
   const { version } = useLive();
-  const [status, setStatus] = useState("Pipeline");
+  const [params] = useSearchParams();
+  const [status, setStatus] = useState(params.get("status") ?? "Pipeline");
   const [q, setQ] = useState("");
   const [rows, setRows] = useState<any[] | null>(null);
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { Activity, BrainCircuit, Scale, ShieldCheck } from "lucide-react";
+import { Activity, BrainCircuit, Scale, ShieldCheck, Target } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Card, PageHeader, Spinner, Stat, cn } from "../components/ui";
 import { useApi } from "../lib/api";
@@ -40,9 +40,10 @@ export default function ModelCard() {
     <div className="animate-rise">
       <PageHeader eyebrow="AI transparency" title="How the recommendations are made"
         subtitle="Model card: what the model learned from, how well it works, and how bias was measured and reduced." />
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
         <Stat label="Production model" value={<span className="text-lg">LightGBM</span>} hint={m.variant} icon={<BrainCircuit className="h-5 w-5" />} />
         <Stat label="Test AUC (2025-26)" value={m.test_auc.toFixed(3)} hint="vs 0.750 for a hand-weighted formula" icon={<Activity className="h-5 w-5" />} tone="green" />
+        <Stat label="Test F1 (2025-26)" value={m.test_f1?.toFixed(3) ?? "-"} hint={`precision ${m.test_precision?.toFixed(2)} · recall ${m.test_recall?.toFixed(2)} · cut-off ${m.f1_threshold}`} icon={<Target className="h-5 w-5" />} />
         <Stat label="Equal-opportunity gap" value={m.equal_opportunity_gap.toFixed(3)} hint="gender gap when truly top-5 (raw model: 0.083)" icon={<Scale className="h-5 w-5" />} tone="blue" />
         <Stat label="Calibration" value={m.calibration === "none" ? "Native" : m.calibration} hint="chosen by cross-validation" icon={<ShieldCheck className="h-5 w-5" />} tone="amber" />
       </div>

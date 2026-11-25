@@ -27,8 +27,8 @@ async def stream():
         yield "event: hello\ndata: {}\n\n"
         while True:
             try:
-                yield await asyncio.wait_for(q.get(), timeout=20)
+                yield await asyncio.wait_for(q.get(), timeout=10)
             except asyncio.TimeoutError:
-                yield ": keep-alive\n\n"
+                yield "event: ping\ndata: {}\n\n"          # lets the browser notice a dead connection
     finally:
         _subscribers.discard(q)

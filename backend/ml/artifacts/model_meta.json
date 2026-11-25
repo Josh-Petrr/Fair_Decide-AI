@@ -30,5 +30,9 @@
   "trees": 192,
   "test_auc": 0.8084,
   "base_rate": 0.4423,
-  "equal_opportunity_gap": 0.0194
+  "equal_opportunity_gap": 0.0194,
+  "test_f1": 0.722,
+  "test_precision": 0.6267,
+  "test_recall": 0.8516,
+  "f1_threshold": 0.3
 }

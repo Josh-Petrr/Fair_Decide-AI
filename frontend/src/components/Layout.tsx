@@ -1,6 +1,7 @@
-import { BadgeCheck, BrainCircuit, Briefcase, ClipboardList, FolderKanban, Inbox, LayoutDashboard, LogOut, PlusCircle, Users, X } from "lucide-react";
-import { NavLink, Outlet } from "react-router-dom";
-import { useApi } from "../lib/api";
+import { BadgeCheck, Bell, BrainCircuit, Briefcase, ClipboardList, FolderKanban, Inbox, LayoutDashboard, LogOut, PlusCircle, Settings, Users, X } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import { useApi, type Inbox as InboxData } from "../lib/api";
 import { useAuth } from "../lib/auth";
 import { useLive } from "../lib/live";
 import { Avatar, cn, fmtDate } from "./ui";
@@ -17,7 +18,13 @@ const NAV = [
 
 export default function Layout() {
   const { user, logout } = useAuth();
-  const { connected, toasts, dismiss } = useLive();
+  const { connected, toasts, dismiss, version, last, notify } = useLive();
+  const { data: inbox } = useApi<InboxData>("/inbox", [version]);
+  const pending = (inbox?.to_approve.length ?? 0) + (inbox?.ready.length ?? 0) + (inbox?.suggestions.length ?? 0);
+  const signedInAt = useRef(Date.now());                   // events from before this sign-in are old news
+  useEffect(() => {
+    if (last?.type === "allocation" && last.at > signedInAt.current && user && last.data.users.includes(user.user_id)) notify({ tone: "info", title: last.data.title });
+  }, [last]); // eslint-disable-line react-hooks/exhaustive-deps
   const { data: health } = useApi<{ as_of: string }>("/health");
   return (
     <div className="flex min-h-screen">
@@ -32,7 +39,7 @@ export default function Layout() {
           </div>
         </div>
         <nav className="flex-1 space-y-1">
-          {NAV.map((n) => (
+          {[...NAV, ...(user?.app_role === "admin" ? [{ to: "/admin", label: "Admin", icon: Settings, end: false }] : [])].map((n) => (
             <NavLink key={n.to} to={n.to} end={n.end}
               className={({ isActive }) => cn("flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition",
                 isActive ? "bg-white/10 font-medium text-white" : "hover:bg-white/5 hover:text-white")}>
@@ -60,6 +67,10 @@ export default function Layout() {
               className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm text-slate-600 hover:bg-slate-100" title="Demo mailbox (Mailpit)">
               <Inbox className="h-4 w-4" /> Demo inbox
             </a>
+            <Link to="/" title="Notifications" aria-label="Notifications" className="relative rounded-xl p-2 text-slate-600 hover:bg-slate-100">
+              <Bell className="h-5 w-5" />
+              {pending > 0 && <span className="absolute -right-0.5 -top-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-rose-500 px-1 text-xs font-bold text-white">{pending}</span>}
+            </Link>
             <div className="flex items-center gap-2.5 border-l border-slate-200 pl-3">
               <Avatar name={user?.full_name ?? "?"} size={34} />
               <div className="hidden text-sm leading-tight sm:block">

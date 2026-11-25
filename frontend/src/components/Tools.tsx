@@ -4,21 +4,21 @@ import { api, type Meta, type RoleView } from "../lib/api";
 import { Avatar, Badge, Button, Card, Portal, cn, inputCls } from "./ui";
 
 // ---------------------------------------------------------------- What-if
-export interface WhatIfState { allocation: number; start_date: string; min_experience: number; skills: { skill_id: string; skill: string; min_level: number }[] }
+export interface WhatIfState { allocation: number; start_date: string; min_experience: number; skills: { skill_id: string; skill: string; min_level: number }[]; certs: string[] }
 
-export function WhatIfPanel({ role, meta, active, busy, onRun, onReset }: { role: RoleView; meta: Meta | null; active: boolean; busy: boolean;
-  onRun: (w: WhatIfState) => void; onReset: () => void }) {
+export function WhatIfPanel({ role, meta, active, busy, onRun, onReset, title = "What-if simulation", hint = "Change the demand and see the shortlist re-rank instantly. Nothing is saved.", runLabel = "Run what-if" }: {
+  role: RoleView; meta: Meta | null; active: boolean; busy: boolean; onRun: (w: WhatIfState) => void; onReset: () => void; title?: string; hint?: string; runLabel?: string }) {
   const idOf = (name: string) => meta?.skills.find((s) => s.skill_name === name)?.skill_id ?? "";
   const initial = (): WhatIfState => ({ allocation: role.allocation, start_date: role.start, min_experience: role.min_experience,
-    skills: role.mandatory_skills.map((s) => ({ skill_id: idOf(s.skill), skill: s.skill, min_level: s.min_level })) });
+    skills: role.mandatory_skills.map((s) => ({ skill_id: idOf(s.skill), skill: s.skill, min_level: s.min_level })), certs: role.mandatory_certs });
   const [w, setW] = useState<WhatIfState>(initial);
   useEffect(() => { setW(initial()); }, [role.role_id, meta]); // eslint-disable-line react-hooks/exhaustive-deps
   const setLevel = (i: number, d: number) => setW({ ...w, skills: w.skills.map((s, j) => j === i ? { ...s, min_level: Math.min(5, Math.max(1, s.min_level + d)) } : s) });
 
   return (
     <Card className="p-5">
-      <div className="mb-1 flex items-center gap-2 font-bold text-slate-800"><FlaskConical className="h-4 w-4 text-brand-500" /> What-if simulation</div>
-      <p className="mb-4 text-xs text-slate-500">Change the demand and see the shortlist re-rank instantly. Nothing is saved.</p>
+      <div className="mb-1 flex items-center gap-2 font-bold text-slate-800"><FlaskConical className="h-4 w-4 text-brand-500" /> {title}</div>
+      <p className="mb-4 text-xs text-slate-500">{hint}</p>
       <label className="text-xs font-medium text-slate-600">Allocation: {w.allocation}%</label>
       <input type="range" min={10} max={100} step={10} value={w.allocation} onChange={(e) => setW({ ...w, allocation: +e.target.value })} className="w-full accent-brand-600" />
       <div className="mt-3 grid grid-cols-2 gap-2">
@@ -39,8 +39,19 @@ export function WhatIfPanel({ role, meta, active, busy, onRun, onReset }: { role
           </div>
         ))}
       </div>
+      {w.certs.length > 0 && <>
+        <div className="mt-3 text-xs font-medium text-slate-600">Mandatory certifications</div>
+        <div className="mt-1 space-y-1">
+          {w.certs.map((c) => (
+            <div key={c} className="flex items-center gap-2 rounded-lg bg-slate-50 px-2 py-1 text-sm">
+              <span className="flex-1 truncate">{c}</span>
+              <button onClick={() => setW({ ...w, certs: w.certs.filter((x) => x !== c) })} className="rounded p-0.5 text-slate-400 hover:bg-white hover:text-rose-500" title="Drop requirement"><X className="h-3.5 w-3.5" /></button>
+            </div>
+          ))}
+        </div>
+      </>}
       <div className="mt-4 flex gap-2">
-        <Button className="flex-1" loading={busy} onClick={() => onRun(w)}>Run what-if</Button>
+        <Button className="flex-1" loading={busy} onClick={() => onRun(w)}>{runLabel}</Button>
         {active && <Button variant="secondary" onClick={() => { setW(initial()); onReset(); }}><RotateCcw className="h-4 w-4" /></Button>}
       </div>
     </Card>

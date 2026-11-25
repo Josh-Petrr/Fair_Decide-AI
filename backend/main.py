@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from . import events, state
+from .api_admin import router as admin_router
 from .api_data import router as data_router
 from .api_engine import router as engine_router
 from .db import close
@@ -25,3 +26,4 @@ app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http
                    allow_methods=["*"], allow_headers=["*"])
 app.include_router(data_router)
 app.include_router(engine_router)
+app.include_router(admin_router)

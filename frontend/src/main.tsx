@@ -6,6 +6,7 @@ import { Spinner } from "./components/ui";
 import "./index.css";
 import { AuthProvider, useAuth } from "./lib/auth";
 import { LiveProvider } from "./lib/live";
+import Admin from "./pages/Admin";
 import Audit from "./pages/Audit";
 import Dashboard from "./pages/Dashboard";
 import Demands from "./pages/Demands";
@@ -42,6 +43,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path="people/:employeeId" element={<Person />} />
               <Route path="audit" element={<Audit />} />
               <Route path="model" element={<ModelCard />} />
+              <Route path="admin" element={<Admin />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
           </Routes>

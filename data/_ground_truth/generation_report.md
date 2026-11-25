@@ -4,7 +4,7 @@ Snapshot date: 2026-10-26  |  seed: 17  |  company: Nexora Technologies Pvt. Ltd
 
 ## Volumes
 
-- app_users: 32 rows
+- app_users: 34 rows
 - assignment_feedback: 3,228 rows
 - assignments: 5,747 rows
 - certification_skills: 99 rows

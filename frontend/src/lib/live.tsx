@@ -4,7 +4,7 @@ export interface LiveEvent { type: string; data: any; at: number }
 export interface Toast { id: number; tone: "success" | "info" | "error"; title: string; text?: string }
 
 const Ctx = createContext<{ connected: boolean; version: number; last: LiveEvent | null; toasts: Toast[];
-  notify: (t: Omit<Toast, "id">) => void; dismiss: (id: number) => void }>(null!);
+  refresh: () => void; notify: (t: Omit<Toast, "id">) => void; dismiss: (id: number) => void }>(null!);
 
 /** Subscribes once to the server's event stream; every page can react to `version` / `last`. */
 export function LiveProvider({ children }: { children: ReactNode }) {
@@ -20,11 +20,10 @@ export function LiveProvider({ children }: { children: ReactNode }) {
     setTimeout(() => setToasts((xs) => xs.filter((x) => x.id !== id)), 6000);
   };
   const dismiss = (id: number) => setToasts((xs) => xs.filter((x) => x.id !== id));
+  const refresh = () => setVersion((v) => v + 1);
 
   useEffect(() => {
-    const es = new EventSource("/api/stream");
-    es.addEventListener("hello", () => setConnected(true));
-    es.onerror = () => setConnected(false);
+    let es: EventSource, seen = 0, opened = false;
     const handle = (type: string) => (e: MessageEvent) => {
       const data = JSON.parse(e.data || "{}");
       setLast({ type, data, at: Date.now() });
@@ -38,11 +37,28 @@ export function LiveProvider({ children }: { children: ReactNode }) {
           : { tone: "error", title: "Email not sent", text: data.error ?? "" });
       if (type === "reset") notify({ tone: "info", title: "Demo data reset" });
     };
-    ["decision", "notification", "reset"].forEach((t) => es.addEventListener(t, handle(t)));
-    return () => es.close();
+    const connect = () => {
+      seen = Date.now();
+      es = new EventSource("/api/stream");
+      es.addEventListener("hello", () => {
+        seen = Date.now();
+        setConnected(true);
+        if (opened) refresh();                    // catch up on whatever was missed while disconnected
+        opened = true;
+      });
+      es.addEventListener("ping", () => { seen = Date.now(); });
+      es.onerror = () => setConnected(false);
+      ["decision", "notification", "reset", "allocation"].forEach((t) => es.addEventListener(t, (e) => { seen = Date.now(); handle(t)(e as MessageEvent); }));
+    };
+    connect();
+    // a dropped connection can look open forever, so reconnect when the server's pings stop
+    const watchdog = setInterval(() => {
+      if (Date.now() - seen > 25000 || es.readyState === EventSource.CLOSED) { es.close(); setConnected(false); connect(); }
+    }, 5000);
+    return () => { clearInterval(watchdog); es.close(); };
   }, []);
 
-  return <Ctx.Provider value={{ connected, version, last, toasts, notify, dismiss }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ connected, version, last, toasts, refresh, notify, dismiss }}>{children}</Ctx.Provider>;
 }
 
 export const useLive = () => useContext(Ctx);

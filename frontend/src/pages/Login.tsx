@@ -1,7 +1,7 @@
-import { ArrowRight, Briefcase, Eye, Scale, ShieldCheck, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, Briefcase, Eye, EyeOff, Scale, ShieldCheck, Sparkles } from "lucide-react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { Avatar, Spinner, cn } from "../components/ui";
+import { Avatar, Button, Spinner, cn, inputCls } from "../components/ui";
 import { useApi } from "../lib/api";
 import { useAuth } from "../lib/auth";
 
@@ -11,14 +11,15 @@ export default function Login() {
   const { user, login } = useAuth();
   const nav = useNavigate();
   const { data: users, loading } = useApi<DemoUser[]>("/auth/users");
-  const [busy, setBusy] = useState<string | null>(null);
+  const [open, setOpen] = useState<string | null>(null);
   if (user) return <Navigate to="/" replace />;
 
-  const go = async (id: string) => {
-    setBusy(id);
-    await login(id);
+  const go = async (id: string, password: string) => {
+    await login(id, password);
     nav("/");
   };
+  const row = (u: DemoUser) => <UserRow key={u.user_id} u={u} open={open === u.user_id}
+    onToggle={() => setOpen(open === u.user_id ? null : u.user_id)} onLogin={(p) => go(u.user_id, p)} />;
   const managers = users?.filter((u) => u.app_role === "manager") ?? [];
   const others = users?.filter((u) => u.app_role !== "manager") ?? [];
 
@@ -55,16 +56,16 @@ export default function Login() {
       <div className="flex flex-col justify-center px-6 py-10 sm:px-12">
         <div className="mx-auto w-full max-w-md">
           <h2 className="text-2xl font-extrabold text-slate-900">Sign in</h2>
-          <p className="mt-1 text-sm text-slate-500">Demo mode: choose who you are.</p>
+          <p className="mt-1 text-sm text-slate-500">Choose your name, then enter your password.</p>
           {loading ? <Spinner /> : (
             <>
               <div className="mt-6 text-xs font-semibold uppercase tracking-wider text-slate-400">Project & delivery managers</div>
               <div className="scrollbar-thin mt-2 max-h-[46vh] space-y-2 overflow-y-auto pr-1">
-                {managers.map((u) => <UserRow key={u.user_id} u={u} busy={busy === u.user_id} onClick={() => go(u.user_id)} />)}
+                {managers.map(row)}
               </div>
-              <div className="mt-6 text-xs font-semibold uppercase tracking-wider text-slate-400">HR & audit (read-only)</div>
+              <div className="mt-6 text-xs font-semibold uppercase tracking-wider text-slate-400">Administration, HR & audit</div>
               <div className="mt-2 space-y-2">
-                {others.map((u) => <UserRow key={u.user_id} u={u} busy={busy === u.user_id} onClick={() => go(u.user_id)} />)}
+                {others.map(row)}
               </div>
             </>
           )}
@@ -74,17 +75,47 @@ export default function Login() {
   );
 }
 
-function UserRow({ u, onClick, busy }: { u: DemoUser; onClick: () => void; busy: boolean }) {
+function UserRow({ u, open, onToggle, onLogin }: { u: DemoUser; open: boolean; onToggle: () => void; onLogin: (password: string) => Promise<void> }) {
+  const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
+  const box = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (open) box.current?.scrollIntoView({ block: "nearest" });
+    else { setPassword(""); setError(""); setShow(false); }
+  }, [open]);
+  const submit = async (e: FormEvent) => {
+    e.preventDefault();
+    setBusy(true); setError("");
+    try { await onLogin(password); }
+    catch (err: any) { setError(err.message); setPassword(""); setBusy(false); }
+  };
   return (
-    <button onClick={onClick}
-      className={cn("group flex w-full items-center gap-3 rounded-xl border border-slate-200 bg-white p-3 text-left transition hover:border-brand-300 hover:shadow-md",
-        busy && "border-brand-400 ring-4 ring-brand-100")}>
-      <Avatar name={u.full_name} size={38} />
-      <div className="min-w-0 flex-1">
-        <div className="font-medium text-slate-800">{u.full_name}</div>
-        <div className="truncate text-xs text-slate-500">{u.designation ?? u.app_role.replace("_", " ")}{u.location ? ` · ${u.location}` : ""}</div>
-      </div>
-      <ArrowRight className="h-4 w-4 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500" />
-    </button>
+    <div ref={box} className={cn("rounded-xl border bg-white transition", open ? "border-brand-400 ring-4 ring-brand-100" : "border-slate-200 hover:border-brand-300 hover:shadow-md")}>
+      <button onClick={onToggle} aria-expanded={open} className="group flex w-full items-center gap-3 p-3 text-left">
+        <Avatar name={u.full_name} size={38} />
+        <div className="min-w-0 flex-1">
+          <div className="font-medium text-slate-800">{u.full_name}</div>
+          <div className="truncate text-xs text-slate-500">{u.designation ?? u.app_role.replace("_", " ")}{u.location ? ` · ${u.location}` : ""}</div>
+        </div>
+        <ArrowRight className={cn("h-4 w-4 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500", open && "rotate-90 text-brand-500")} />
+      </button>
+      {open && (
+        <form onSubmit={submit} className="px-3 pb-3">
+          <div className="flex gap-2">
+            <div className="relative flex-1">
+              <input autoFocus type={show ? "text" : "password"} autoComplete="off" placeholder="Password" aria-label={`Password for ${u.full_name}`}
+                className={cn(inputCls, "pr-9", error && "border-rose-400")} value={password} onChange={(e) => { setPassword(e.target.value); setError(""); }} />
+              <button type="button" onClick={() => setShow(!show)} aria-label={show ? "Hide password" : "Show password"} className="absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-600">
+                {show ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </button>
+            </div>
+            <Button type="submit" size="sm" loading={busy} disabled={!password}>Sign in</Button>
+          </div>
+          {error && <div role="alert" className="mt-1.5 text-sm text-rose-600">{error}</div>}
+        </form>
+      )}
+    </div>
   );
 }

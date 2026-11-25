@@ -95,6 +95,14 @@ class Recommender:
         return dict(employee=self._person(emp_id, role["start"]), eligible=not blockers,
                     blockers=blockers, warnings=warnings)
 
+    def eligibility(self, role, emp_id):
+        out = self.why_not(role, emp_id)
+        p, on_start, n = out.pop("employee"), *self.store.load_on(emp_id, role["start"])
+        score = self._score(role, [emp_id], today_ordinal())[0]["p"] if out["eligible"] else None
+        return dict(out, role=self._role_view(role), success_probability=score and round(score, 3),
+                    workload=dict(today=p["workload_now"], on_start=on_start, after=on_start + role["alloc"],
+                                  projects_on_start=n, current_projects=p["current_projects"]))
+
     # ------------------------------------------------------------------ scoring & explanation
     def _score(self, role, ids, today):
         if not ids:

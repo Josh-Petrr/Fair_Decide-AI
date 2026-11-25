@@ -1,0 +1,658 @@
+{
+  "as_of": "2026-10-26",
+  "population": {
+    "active_people": 817,
+    "breaks": {
+      "Female": {
+        "people": 303,
+        "with_break": 33,
+        "avg_break_months": 16.2
+      },
+      "Male": {
+        "people": 514,
+        "with_break": 19,
+        "avg_break_months": 7.3
+      }
+    }
+  },
+  "design": {
+    "protected_columns": [
+      "gender",
+      "date_of_birth",
+      "age_band",
+      "career_break_months"
+    ],
+    "protected_in_model_features": [],
+    "protected_loaded_into_engine": [],
+    "location_or_work_mode_in_features": []
+  },
+  "live_groups": {
+    "gender": {
+      "Female": {
+        "considered": 46965,
+        "eligible": 767,
+        "shortlisted": 549,
+        "pass_rate": 0.0163,
+        "shortlist_rate": 0.7158,
+        "filter_ratio": 1.0,
+        "shortlist_ratio": 0.9526
+      },
+      "Male": {
+        "considered": 79670,
+        "eligible": 1054,
+        "shortlisted": 792,
+        "pass_rate": 0.0132,
+        "shortlist_rate": 0.7514,
+        "filter_ratio": 0.8101,
+        "shortlist_ratio": 1.0
+      }
+    },
+    "career_break": {
+      "Career break": {
+        "considered": 8060,
+        "eligible": 183,
+        "shortlisted": 142,
+        "pass_rate": 0.0227,
+        "shortlist_rate": 0.776,
+        "filter_ratio": 1.0,
+        "shortlist_ratio": 1.0
+      },
+      "No break": {
+        "considered": 118575,
+        "eligible": 1638,
+        "shortlisted": 1199,
+        "pass_rate": 0.0138,
+        "shortlist_rate": 0.732,
+        "filter_ratio": 0.6084,
+        "shortlist_ratio": 0.9433
+      }
+    },
+    "gender_break": {
+      "Female / Career break": {
+        "considered": 5115,
+        "eligible": 126,
+        "shortlisted": 91,
+        "pass_rate": 0.0246,
+        "shortlist_rate": 0.7222,
+        "filter_ratio": 1.0,
+        "shortlist_ratio": 0.8072
+      },
+      "Male / Career break": {
+        "considered": 2945,
+        "eligible": 57,
+        "shortlisted": 51,
+        "pass_rate": 0.0194,
+        "shortlist_rate": 0.8947,
+        "filter_ratio": 0.7857,
+        "shortlist_ratio": 1.0
+      },
+      "Male / No break": {
+        "considered": 76725,
+        "eligible": 997,
+        "shortlisted": 741,
+        "pass_rate": 0.013,
+        "shortlist_rate": 0.7432,
+        "filter_ratio": 0.5275,
+        "shortlist_ratio": 0.8307
+      },
+      "Female / No break": {
+        "considered": 41850,
+        "eligible": 641,
+        "shortlisted": 458,
+        "pass_rate": 0.0153,
+        "shortlist_rate": 0.7145,
+        "filter_ratio": 0.6218,
+        "shortlist_ratio": 0.7986
+      }
+    },
+    "age_band": {
+      "30-39": {
+        "considered": 37045,
+        "eligible": 908,
+        "shortlisted": 749,
+        "pass_rate": 0.0245,
+        "shortlist_rate": 0.8249,
+        "filter_ratio": 1.0,
+        "shortlist_ratio": 1.0
+      },
+      "<30": {
+        "considered": 86800,
+        "eligible": 858,
+        "shortlisted": 548,
+        "pass_rate": 0.0099,
+        "shortlist_rate": 0.6387,
+        "filter_ratio": 0.4033,
+        "shortlist_ratio": 0.7743
+      },
+      "40-49": {
+        "considered": 2790,
+        "eligible": 55,
+        "shortlisted": 44,
+        "pass_rate": 0.0197,
+        "shortlist_rate": 0.8,
+        "filter_ratio": 0.8043,
+        "shortlist_ratio": 0.9698
+      }
+    },
+    "location": {
+      "Hyderabad": {
+        "considered": 25575,
+        "eligible": 488,
+        "shortlisted": 383,
+        "pass_rate": 0.0191,
+        "shortlist_rate": 0.7848,
+        "filter_ratio": 1.0,
+        "shortlist_ratio": 0.8926
+      },
+      "Kochi": {
+        "considered": 5890,
+        "eligible": 58,
+        "shortlisted": 51,
+        "pass_rate": 0.0098,
+        "shortlist_rate": 0.8793,
+        "filter_ratio": 0.5161,
+        "shortlist_ratio": 1.0
+      },
+      "Pune": {
+        "considered": 20925,
+        "eligible": 237,
+        "shortlisted": 151,
+        "pass_rate": 0.0113,
+        "shortlist_rate": 0.6371,
+        "filter_ratio": 0.5936,
+        "shortlist_ratio": 0.7246
+      },
+      "Bengaluru": {
+        "considered": 45105,
+        "eligible": 660,
+        "shortlisted": 484,
+        "pass_rate": 0.0146,
+        "shortlist_rate": 0.7333,
+        "filter_ratio": 0.7669,
+        "shortlist_ratio": 0.834
+      },
+      "Chennai": {
+        "considered": 17825,
+        "eligible": 254,
+        "shortlisted": 176,
+        "pass_rate": 0.0142,
+        "shortlist_rate": 0.6929,
+        "filter_ratio": 0.7468,
+        "shortlist_ratio": 0.788
+      },
+      "Gurugram": {
+        "considered": 11315,
+        "eligible": 124,
+        "shortlisted": 96,
+        "pass_rate": 0.011,
+        "shortlist_rate": 0.7742,
+        "filter_ratio": 0.5743,
+        "shortlist_ratio": 0.8805
+      }
+    },
+    "work_mode": {
+      "Hybrid": {
+        "considered": 99200,
+        "eligible": 1403,
+        "shortlisted": 1021,
+        "pass_rate": 0.0141,
+        "shortlist_rate": 0.7277,
+        "filter_ratio": 0.7475,
+        "shortlist_ratio": 0.9071
+      },
+      "Remote": {
+        "considered": 8990,
+        "eligible": 69,
+        "shortlisted": 40,
+        "pass_rate": 0.0077,
+        "shortlist_rate": 0.5797,
+        "filter_ratio": 0.4056,
+        "shortlist_ratio": 0.7226
+      },
+      "Work from Office": {
+        "considered": 18445,
+        "eligible": 349,
+        "shortlisted": 280,
+        "pass_rate": 0.0189,
+        "shortlist_rate": 0.8023,
+        "filter_ratio": 1.0,
+        "shortlist_ratio": 1.0
+      }
+    }
+  },
+  "live_monitor": {
+    "ok": 134,
+    "review - women under-represented in shortlist": 15,
+    "too few candidates to assess": 6
+  },
+  "monitor_unit": {
+    "all_men_shortlist": "review - women under-represented in shortlist",
+    "balanced_shortlist": "ok"
+  },
+  "exclusion_reasons_per_1000_checks": {
+    "Male": {
+      "leave in first 30 days": 15.48,
+      "status: on long leave": 13.62,
+      "not enough experience": 255.63
+    },
+    "Female": {
+      "not enough experience": 232.96,
+      "leave in first 30 days": 23.38,
+      "status: on long leave": 6.6
+    }
+  },
+  "blocking_leaves_by_type": {
+    "Earned Leave": {
+      "Female": 8,
+      "Male": 14
+    },
+    "Marriage Leave": {
+      "Female": 1,
+      "Male": 0
+    },
+    "Maternity Leave": {
+      "Female": 7,
+      "Male": 0
+    },
+    "Medical Leave": {
+      "Female": 0,
+      "Male": 4
+    },
+    "Paternity Leave": {
+      "Female": 0,
+      "Male": 3
+    },
+    "Sabbatical": {
+      "Female": 0,
+      "Male": 3
+    }
+  },
+  "twins": {
+    "gender_and_name_swap": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": "0",
+      "by_gender": {
+        "Female": 0.0,
+        "Male": 0.0
+      }
+    },
+    "location_and_work_mode_change": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": "0",
+      "by_gender": {
+        "Female": 0.0,
+        "Male": 0.0
+      }
+    },
+    "career_break_6m_experience_lost": {
+      "cases": 400,
+      "blocked_by_filters": 4,
+      "mean_change_pp": -0.55,
+      "min_change_pp": -9.09,
+      "max_change_pp": 4.6,
+      "max_abs_change_pp": 9.0938,
+      "left_or_joined_top5": "10",
+      "by_gender": {
+        "Female": -0.43,
+        "Male": -0.63
+      }
+    },
+    "career_break_12m_experience_lost": {
+      "cases": 400,
+      "blocked_by_filters": 5,
+      "mean_change_pp": -1.1,
+      "min_change_pp": -16.47,
+      "max_change_pp": 10.58,
+      "max_abs_change_pp": 16.4701,
+      "left_or_joined_top5": "13",
+      "by_gender": {
+        "Female": -0.69,
+        "Male": -1.37
+      }
+    },
+    "career_break_18m_experience_lost": {
+      "cases": 400,
+      "blocked_by_filters": 13,
+      "mean_change_pp": -1.83,
+      "min_change_pp": -22.35,
+      "max_change_pp": 7.79,
+      "max_abs_change_pp": 22.3537,
+      "left_or_joined_top5": "19",
+      "by_gender": {
+        "Female": -1.31,
+        "Male": -2.17
+      }
+    },
+    "career_break_24m_experience_lost": {
+      "cases": 400,
+      "blocked_by_filters": 20,
+      "mean_change_pp": -2.46,
+      "min_change_pp": -33.19,
+      "max_change_pp": 7.65,
+      "max_abs_change_pp": 33.1938,
+      "left_or_joined_top5": "27",
+      "by_gender": {
+        "Female": -2.03,
+        "Male": -2.74
+      }
+    },
+    "returner_missed_12m_of_projects": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": -4.34,
+      "min_change_pp": -40.69,
+      "max_change_pp": 28.27,
+      "max_abs_change_pp": 40.6891,
+      "left_or_joined_top5": "61",
+      "by_gender": {
+        "Female": -6.19,
+        "Male": -3.16
+      }
+    },
+    "past_maternity_leave_6m_ended": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": "0",
+      "by_gender": {
+        "Female": 0.0,
+        "Male": 0.0
+      }
+    },
+    "past_paternity_leave_15d_ended": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": "0",
+      "by_gender": {
+        "Female": 0.0,
+        "Male": 0.0
+      }
+    },
+    "maternity_182d_starts_1w_after_role": {
+      "cases": 400,
+      "blocked_by_filters": 400,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": 0,
+      "by_gender": {}
+    },
+    "paternity_15d_starts_1w_after_role": {
+      "cases": 400,
+      "blocked_by_filters": 400,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": 0,
+      "by_gender": {}
+    },
+    "paternity_10d_starts_1w_after_role": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": "0",
+      "by_gender": {
+        "Female": 0.0,
+        "Male": 0.0
+      }
+    },
+    "maternity_182d_starts_5w_after_role": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": "0",
+      "by_gender": {
+        "Female": 0.0,
+        "Male": 0.0
+      }
+    },
+    "paternity_15d_starts_5w_after_role": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": "0",
+      "by_gender": {
+        "Female": 0.0,
+        "Male": 0.0
+      }
+    },
+    "earned_leave_12d_starts_1w_after_role": {
+      "cases": 400,
+      "blocked_by_filters": 400,
+      "mean_change_pp": 0.0,
+      "min_change_pp": 0.0,
+      "max_change_pp": 0.0,
+      "max_abs_change_pp": 0.0,
+      "left_or_joined_top5": 0,
+      "by_gender": {}
+    },
+    "identical_leave_identical_outcome_any_gender": "150/150",
+    "late_maternity_flag_shown": "100/100",
+    "self_rating_plus1_unverified": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 5.07,
+      "min_change_pp": -3.29,
+      "max_change_pp": 24.17,
+      "max_abs_change_pp": 24.1666,
+      "left_or_joined_top5": "0",
+      "by_gender": {
+        "Female": 5.16,
+        "Male": 5.02
+      }
+    },
+    "self_rating_plus1_unverified_ranked_6_10": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 9.09,
+      "min_change_pp": -2.54,
+      "max_change_pp": 31.75,
+      "max_abs_change_pp": 31.749,
+      "left_or_joined_top5": "147",
+      "by_gender": {
+        "Male": 8.88,
+        "Female": 9.39
+      }
+    },
+    "verified_by_manager": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": -0.09,
+      "min_change_pp": -6.22,
+      "max_change_pp": 5.53,
+      "max_abs_change_pp": 6.2207,
+      "left_or_joined_top5": "7",
+      "by_gender": {
+        "Female": -0.08,
+        "Male": -0.09
+      }
+    },
+    "older_plus10y_experience": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": -1.63,
+      "min_change_pp": -12.59,
+      "max_change_pp": 16.74,
+      "max_abs_change_pp": 16.7422,
+      "left_or_joined_top5": "18",
+      "by_gender": {
+        "Female": -2.07,
+        "Male": -1.35
+      }
+    },
+    "older_plus20y_experience": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": -1.54,
+      "min_change_pp": -11.99,
+      "max_change_pp": 15.93,
+      "max_abs_change_pp": 15.9254,
+      "left_or_joined_top5": "13",
+      "by_gender": {
+        "Female": -1.92,
+        "Male": -1.29
+      }
+    },
+    "no_past_ratings": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": -11.29,
+      "min_change_pp": -39.39,
+      "max_change_pp": 34.99,
+      "max_abs_change_pp": 39.3919,
+      "left_or_joined_top5": "139",
+      "by_gender": {
+        "Female": -10.68,
+        "Male": -11.69
+      }
+    },
+    "verified_by_manager_ranked_6_10": {
+      "cases": 400,
+      "blocked_by_filters": 0,
+      "mean_change_pp": 0.34,
+      "min_change_pp": -6.64,
+      "max_change_pp": 7.89,
+      "max_abs_change_pp": 7.8919,
+      "left_or_joined_top5": "9",
+      "by_gender": {
+        "Male": 0.38,
+        "Female": 0.28
+      }
+    }
+  },
+  "real_break_penalty": {
+    "Male": {
+      "cases": 57,
+      "mean_pp": -0.46,
+      "worst_pp": -7.6
+    },
+    "Female": {
+      "cases": 126,
+      "mean_pp": -1.22,
+      "worst_pp": -17.27
+    }
+  },
+  "blocked_only_because_of_break": {
+    "Female": 8
+  },
+  "rating_correction": {
+    "Female / Career break": {
+      "cases": 126,
+      "mean_change_pp": 18.02,
+      "shortlisted_raw": 74,
+      "shortlisted_corrected": 91
+    },
+    "Female / No break": {
+      "cases": 641,
+      "mean_change_pp": 2.98,
+      "shortlisted_raw": 461,
+      "shortlisted_corrected": 458
+    },
+    "Male / Career break": {
+      "cases": 57,
+      "mean_change_pp": 7.94,
+      "shortlisted_raw": 47,
+      "shortlisted_corrected": 51
+    },
+    "Male / No break": {
+      "cases": 997,
+      "mean_change_pp": 0.0,
+      "shortlisted_raw": 759,
+      "shortlisted_corrected": 741
+    }
+  },
+  "proxy_leakage_auc": {
+    "gender (Female)": 0.856,
+    "career break": 0.719,
+    "age 40+": 0.976
+  },
+  "truth_by_group": {
+    "gender": {
+      "Female": {
+        "selection_rate": 0.322,
+        "selected_when_truly_top5": 0.736
+      },
+      "Male": {
+        "selection_rate": 0.339,
+        "selected_when_truly_top5": 0.755
+      }
+    },
+    "career_break": {
+      "Career break": {
+        "selection_rate": 0.424,
+        "selected_when_truly_top5": 0.804
+      },
+      "No break": {
+        "selection_rate": 0.323,
+        "selected_when_truly_top5": 0.743
+      }
+    },
+    "gender_break": {
+      "Female / Career break": {
+        "selection_rate": 0.367,
+        "selected_when_truly_top5": 0.75
+      },
+      "Female / No break": {
+        "selection_rate": 0.315,
+        "selected_when_truly_top5": 0.732
+      },
+      "Male / Career break": {
+        "selection_rate": 0.493,
+        "selected_when_truly_top5": 0.938
+      },
+      "Male / No break": {
+        "selection_rate": 0.328,
+        "selected_when_truly_top5": 0.747
+      }
+    },
+    "age_band": {
+      "30-39": {
+        "selection_rate": 0.477,
+        "selected_when_truly_top5": 0.76
+      },
+      "40-49": {
+        "selection_rate": 0.405,
+        "selected_when_truly_top5": 0.636
+      },
+      "<30": {
+        "selection_rate": 0.266,
+        "selected_when_truly_top5": 0.747
+      }
+    }
+  },
+  "truth_roles": 817,
+  "assignments_age45_by_period": {
+    "2018-2023 (training)": 0,
+    "2024-2026": 10,
+    "oldest_age_at_assignment": 45.9
+  },
+  "seconds": 144
+}

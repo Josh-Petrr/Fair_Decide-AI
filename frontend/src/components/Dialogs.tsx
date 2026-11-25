@@ -1,138 +1,137 @@
-import { CheckCircle2, ChevronDown, Clock, Database, Mail, XCircle } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { api, ApiError, type Candidate, type RoleView } from "../lib/api";
-import { useLive } from "../lib/live";
-import { Avatar, Badge, Button, LevelDots, Modal, Ring, cn, inputCls } from "./ui";
+import { Avatar, Badge, Button, Empty, LevelDots, Modal, Ring, Spinner, cn, inputCls } from "./ui";
 
-interface EmailDraft { employee_id: string; recipient: string | null; subject: string; body: string }
-
-export function ApproveDialog({ open, onClose, role, people, requestId, onDone }: {
+export function RequestDialog({ open, onClose, role, people, requestId, onDone }: {
   open: boolean; onClose: () => void; role: RoleView; people: Candidate[]; requestId?: number; onDone: () => void }) {
-  const { last } = useLive();
-  const [drafts, setDrafts] = useState<EmailDraft[]>([]);
-  const [openMail, setOpenMail] = useState<string | null>(null);
   const [reason, setReason] = useState("");
   const [notes, setNotes] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<ApiError | null>(null);
-  const [result, setResult] = useState<{ assignments: string[]; notifications: number[]; notification_of: Record<string, number>; decision: string } | null>(null);
-  const [mailStatus, setMailStatus] = useState<Record<number, string>>({});
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
     if (!open) return;
-    setResult(null); setError(null); setMailStatus({});
+    setDone(false); setError(null);
     setReason(people.length === 1 ? `Strongest match: ${people[0].explanation.split(";")[0]}` : "");
-    api<EmailDraft[]>("/email-preview", { json: { role_id: role.role_id, employee_ids: people.map((p) => p.employee_id) } }).then(setDrafts);
   }, [open]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {   // live delivery status from the server
-    if (last?.type === "notification" && result?.notifications.includes(last.data.notification_id))
-      setMailStatus((s) => ({ ...s, [last.data.notification_id]: last.data.status }));
-  }, [last, result]);
 
   const submit = async () => {
     setBusy(true); setError(null);
     try {
-      const r = await api("/decisions", { json: {
-        role_id: role.role_id, decision: "approve", employee_ids: people.map((p) => p.employee_id), reason, notes: notes || null,
-        request_id: requestId, emails: Object.fromEntries(drafts.map((d) => [d.employee_id, { subject: d.subject, body: d.body }])) } });
-      setResult(r);
+      await api("/allocations", { json: { role_id: role.role_id, employee_ids: people.map((p) => p.employee_id), reason, notes: notes || null, request_id: requestId } });
+      setDone(true);
       onDone();
     } catch (e) { setError(e as ApiError); } finally { setBusy(false); }
   };
 
-  if (result) return (
-    <Modal open={open} onClose={onClose} title="Assignment complete"
-      footer={<><Link to="/audit" className="rounded-xl px-4 py-2.5 text-sm text-slate-600 hover:bg-slate-100">View audit trail</Link>
-        <Link to="/demands"><Button>Back to demands</Button></Link></>}>
+  const approvers = (p: Candidate) => p.approvers?.length
+    ? <div className="mt-2 flex flex-wrap gap-1.5">{p.approvers.map((a) => <Badge key={a.user_id} tone="amber">{a.name} · {a.relation}</Badge>)}</div>
+    : <div className="mt-2 text-xs text-emerald-600">No approval needed</div>;
+
+  if (done) return (
+    <Modal open={open} onClose={onClose} title="Request sent"
+      footer={<Link to="/"><Button>Go to notifications</Button></Link>}>
       <div className="flex flex-col items-center text-center">
         <div className="grid h-16 w-16 animate-pop place-items-center rounded-full bg-emerald-100"><CheckCircle2 className="h-9 w-9 text-emerald-600" /></div>
-        <div className="mt-3 text-lg font-bold text-slate-900">{people.length} {people.length === 1 ? "person" : "people"} assigned to {role.title}</div>
-        <div className="text-sm text-slate-500">Decision recorded as <b>{result.decision}</b> with your reason.</div>
+        <div className="mt-3 text-lg font-bold text-slate-900">Waiting for approval</div>
+        <div className="text-sm text-slate-500">Once everyone approves, you can send it from your notifications. Nothing is assigned or emailed until then.</div>
       </div>
-      <div className="mt-6 space-y-2">
-        <Step icon={<Database className="h-4 w-4" />} done text={`Database updated: ${result.assignments.join(", ")}, demand status, audit log`} />
-        {drafts.map((d) => {
-          const id = result.notification_of[d.employee_id];
-          const st = !d.recipient ? "failed" : mailStatus[id] ?? "queued";
-          const name = people.find((p) => p.employee_id === d.employee_id)?.name;
-          return <Step key={d.employee_id} icon={<Mail className="h-4 w-4" />} done={st === "sent"} failed={st === "failed"}
-            text={!d.recipient ? `${name}: no email on record - please inform them directly`
-              : st === "failed" ? `Email to ${d.recipient} failed - mail server unavailable`
-              : `Email to ${d.recipient}: ${st === "sent" ? "delivered" : "sending…"}`} />;
-        })}
+      <div className="mt-5 space-y-2">
+        {people.map((p) => <div key={p.employee_id} className="rounded-xl border border-slate-200 p-3 text-sm font-medium text-slate-800">{p.name}{approvers(p)}</div>)}
       </div>
     </Modal>
   );
 
   return (
-    <Modal open={open} onClose={onClose} wide title={`Approve & assign · ${role.title}`}
+    <Modal open={open} onClose={onClose} title={`Request allocation · ${role.title}`}
       footer={<><Button variant="ghost" onClick={onClose}>Cancel</Button>
-        <Button onClick={submit} loading={busy} disabled={reason.trim().length < 5}><CheckCircle2 className="h-4 w-4" /> Confirm assignment</Button></>}>
-      <div className="grid gap-6 md:grid-cols-[1fr_1.2fr]">
-        <div>
-          <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">You are assigning</div>
-          <div className="space-y-2">
-            {people.map((p) => (
-              <div key={p.employee_id} className="flex items-center gap-3 rounded-xl border border-slate-200 p-3">
-                <Avatar name={p.name} size={36} />
-                <div className="min-w-0 flex-1">
-                  <div className="text-sm font-medium text-slate-800">{p.name}</div>
-                  <div className="text-xs text-slate-500">Workload {p.workload_on_start}% → {p.workload_after}% · {p.confidence} confidence</div>
-                </div>
-                <Ring value={p.success_probability} size={44} />
+        <Button onClick={submit} loading={busy} disabled={reason.trim().length < 5}><CheckCircle2 className="h-4 w-4" /> Send for approval</Button></>}>
+      <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">Approval needed from</div>
+      <div className="space-y-2">
+        {people.map((p) => (
+          <div key={p.employee_id} className="rounded-xl border border-slate-200 p-3">
+            <div className="flex items-center gap-3">
+              <Avatar name={p.name} size={36} />
+              <div className="min-w-0 flex-1">
+                <div className="text-sm font-medium text-slate-800">{p.name}</div>
+                <div className="text-xs text-slate-500">Workload {p.workload_on_start}% → {p.workload_after}% · {p.confidence} confidence</div>
               </div>
-            ))}
-          </div>
-          <div className="mt-4 rounded-xl bg-slate-50 p-3 text-sm text-slate-600">
-            <b>{role.project_name}</b><br />{role.start} → {role.end} · {role.allocation}% allocation
-          </div>
-          <label className="mt-4 block text-sm font-medium text-slate-700">Reason for this decision <span className="text-rose-500">*</span></label>
-          <textarea className={cn(inputCls, "mt-1 h-24")} value={reason} onChange={(e) => setReason(e.target.value)}
-            placeholder="Why these people? This is stored in the audit trail." />
-          <input className={cn(inputCls, "mt-2")} value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Optional notes" />
-          {error && (
-            <div className="mt-3 rounded-xl bg-rose-50 p-3 text-sm text-rose-700">
-              <b>{error.message}</b>
-              {error.details && Object.entries(error.details).map(([n, b]) => <div key={n}>{n}: {b.join("; ")}</div>)}
+              <Ring value={p.success_probability} size={44} />
             </div>
-          )}
-        </div>
-        <div>
-          <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">Notification emails (editable)</div>
-          <div className="space-y-2">
-            {drafts.map((d, i) => (
-              <div key={d.employee_id} className="rounded-xl border border-slate-200">
-                <button onClick={() => setOpenMail(openMail === d.employee_id ? null : d.employee_id)} className="flex w-full items-center gap-2 p-3 text-left text-sm">
-                  <Mail className="h-4 w-4 text-brand-500" />
-                  <span className="flex-1 truncate">{d.recipient ?? <span className="text-rose-600">No email on record</span>}</span>
-                  <ChevronDown className={cn("h-4 w-4 text-slate-400 transition", openMail === d.employee_id && "rotate-180")} />
-                </button>
-                {openMail === d.employee_id && (
-                  <div className="space-y-2 border-t border-slate-100 p-3">
-                    <input className={inputCls} value={d.subject} onChange={(e) => setDrafts(drafts.map((x, j) => j === i ? { ...x, subject: e.target.value } : x))} />
-                    <textarea className={cn(inputCls, "h-56 font-mono text-xs")} value={d.body}
-                      onChange={(e) => setDrafts(drafts.map((x, j) => j === i ? { ...x, body: e.target.value } : x))} />
-                  </div>
-                )}
-              </div>
-            ))}
+            {approvers(p)}
           </div>
-          <p className="mt-3 text-xs text-slate-400">Emails go to the local demo inbox (Mailpit) - no real email is sent.</p>
-        </div>
+        ))}
       </div>
+      <div className="mt-4 rounded-xl bg-slate-50 p-3 text-sm text-slate-600">
+        <b>{role.project_name}</b><br />{role.start} → {role.end} · {role.allocation}% allocation
+      </div>
+      <label className="mt-4 block text-sm font-medium text-slate-700">Reason for this decision <span className="text-rose-500">*</span></label>
+      <textarea className={cn(inputCls, "mt-1 h-24")} value={reason} onChange={(e) => setReason(e.target.value)}
+        placeholder="Why these people? Approvers see this, and it is stored in the audit trail." />
+      <input className={cn(inputCls, "mt-2")} value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Optional notes" />
+      {error && (
+        <div className="mt-3 rounded-xl bg-rose-50 p-3 text-sm text-rose-700">
+          <b>{error.message}</b>
+          {error.details && Object.entries(error.details).map(([n, b]) => <div key={n}>{n}: {b.join("; ")}</div>)}
+        </div>
+      )}
     </Modal>
   );
 }
 
-function Step({ icon, text, done, failed }: { icon: ReactNode; text: string; done?: boolean; failed?: boolean }) {
+export function SuggestDialog({ open, onClose, roleId, head }: { open: boolean; onClose: () => void; roleId: string; head: string }) {
+  const [people, setPeople] = useState<{ employee_id: string; name: string; designation: string; blockers: string[] }[] | null>(null);
+  const [picked, setPicked] = useState<string[]>([]);
+  const [note, setNote] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    if (!open) return;
+    setPeople(null); setPicked([]); setNote(""); setSent(false); setError("");
+    api(`/demands/${roleId}/bench-team`).then(setPeople);
+  }, [open, roleId]);
+  const submit = async () => {
+    setBusy(true); setError("");
+    try { await api("/suggestions", { json: { role_id: roleId, employee_ids: picked, note: note || null } }); setSent(true); }
+    catch (e: any) { setError(e.message); } finally { setBusy(false); }
+  };
+  if (sent) return (
+    <Modal open={open} onClose={onClose} title="Notification sent" footer={<Button onClick={onClose}>Done</Button>}>
+      <p className="text-sm text-slate-600"><b>{head}</b> will see this in their notifications and can request the allocation.</p>
+    </Modal>
+  );
   return (
-    <div className={cn("flex items-center gap-3 rounded-xl border p-3 text-sm", done ? "border-emerald-200 bg-emerald-50/50" : failed ? "border-rose-200 bg-rose-50/50" : "border-slate-200")}>
-      <span className="text-slate-500">{icon}</span>
-      <span className="flex-1 text-slate-700">{text}</span>
-      {done ? <CheckCircle2 className="h-5 w-5 text-emerald-500" /> : failed ? <XCircle className="h-5 w-5 text-rose-500" /> : <Clock className="h-5 w-5 animate-pulse text-slate-400" />}
-    </div>
+    <Modal open={open} onClose={onClose} title={`Notify ${head}`}
+      footer={<><Button variant="ghost" onClick={onClose}>Cancel</Button>
+        <Button loading={busy} disabled={!picked.length} onClick={submit}>Send notification</Button></>}>
+      {!people ? <Spinner /> : people.length === 0 ? <Empty title="No free people in your team" text="Nobody reporting to you is on the bench right now." /> : (
+        <>
+          <p className="mb-3 text-sm text-slate-600">Free people in your team:</p>
+          <div className="scrollbar-thin max-h-72 space-y-2 overflow-y-auto">
+            {people.map((p) => {
+              const on = picked.includes(p.employee_id), blocked = p.blockers.length > 0;
+              return (
+                <label key={p.employee_id} className={cn("flex items-center gap-3 rounded-xl border p-3", blocked ? "border-slate-100 opacity-60" : on ? "border-brand-400 bg-brand-50/50" : "cursor-pointer border-slate-200")}>
+                  <input type="checkbox" disabled={blocked} checked={on} className="accent-brand-600"
+                    onChange={() => setPicked(on ? picked.filter((x) => x !== p.employee_id) : [...picked, p.employee_id])} />
+                  <Avatar name={p.name} size={34} />
+                  <div className="min-w-0 flex-1">
+                    <div className="text-sm font-medium text-slate-800">{p.name}</div>
+                    <div className="truncate text-xs text-slate-500">{blocked ? p.blockers[0] : p.designation}</div>
+                  </div>
+                </label>
+              );
+            })}
+          </div>
+          <input className={cn(inputCls, "mt-3")} maxLength={300} value={note} onChange={(e) => setNote(e.target.value)} placeholder="Optional message" />
+          {error && <div className="mt-2 text-sm text-rose-600">{error}</div>}
+        </>
+      )}
+    </Modal>
   );
 }
 

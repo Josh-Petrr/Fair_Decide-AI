@@ -20,6 +20,31 @@ def _next_id(c, table, col, prefix, width):
     return lambda k: f"{prefix}{m + k:0{width}d}"
 
 
+def project_head(c, role_id):
+    return c.execute("""SELECT p.project_manager_id AS employee_id, e.full_name FROM project_roles r JOIN projects p USING (project_id)
+                        JOIN employees e ON e.employee_id = p.project_manager_id WHERE r.project_role_id = %s""", (role_id,)).fetchone()
+
+
+def require_head(c, user, role_id):
+    head = project_head(c, role_id)
+    if not head or head["employee_id"] != user["employee_id"]:
+        raise HTTPException(403, f"Only the project head ({head['full_name'] if head else 'not set'}) can allocate on this project.")
+
+
+def move_reporting(c, assignment_id, head):
+    """The person now reports to the project head, if this is their biggest allocation over the same period.
+    Managers keep their own reporting line."""
+    a = c.execute("SELECT employee_id, allocation_pct, start_date, end_date FROM assignments WHERE assignment_id = %s", (assignment_id,)).fetchone()
+    other = c.execute("""SELECT COALESCE(max(allocation_pct), 0) AS m FROM assignments WHERE employee_id = %s AND assignment_id <> %s
+                          AND status <> 'Cancelled' AND start_date <= %s AND end_date >= %s""",
+                      (a["employee_id"], assignment_id, a["end_date"], a["start_date"])).fetchone()["m"]
+    is_manager = c.execute("SELECT 1 FROM app_users WHERE employee_id = %s AND app_role = 'manager'", (a["employee_id"],)).fetchone()
+    if a["allocation_pct"] < other or is_manager or a["employee_id"] == head:
+        return False
+    return c.execute("UPDATE employees SET reporting_manager_id = %s WHERE employee_id = %s AND reporting_manager_id IS DISTINCT FROM %s",
+                     (head, a["employee_id"], head)).rowcount > 0
+
+
 def decide(rec, user, role_id, decision, employee_ids, reason, request_id=None, notes=None, emails=None):
     """emails: optional {employee_id: {"subject": .., "body": ..}} edited by the manager."""
     if not reason or len(reason.strip()) < 5:
@@ -35,6 +60,7 @@ def decide(rec, user, role_id, decision, employee_ids, reason, request_id=None, 
         st, today = rec.store, today_ordinal()
         if role_id not in st.roles:
             raise HTTPException(404, "Demand not found")
+        require_head(c, user, role_id)
         role = st.role_spec(role_id)
         filled = sum(1 for a in st.asg if a["project_role_id"] == role_id and a["status"] in ("Upcoming", "Active"))
         remaining = role["headcount"] - filled
@@ -71,6 +97,7 @@ def decide(rec, user, role_id, decision, employee_ids, reason, request_id=None, 
                           (asg_id(k), eid, role["project_id"], role_id, role["title"], role["alloc"], start, end, status,
                            user["employee_id"], from_ordinal(today)))
                 new_ids.append(asg_id(k))
+                move_reporting(c, asg_id(k), user["employee_id"])
             filled_now = filled + len(employee_ids)
             c.execute("UPDATE project_roles SET demand_status = %s WHERE project_role_id = %s",
                       ("Filled" if filled_now >= role["headcount"] else "Partially Filled", role_id))

@@ -916,6 +916,14 @@ def main():
             seniors = [x for x in emps if x["family"] == "pm" and x["level"] == 6 and x["status"] != "Exited" and x is not e]
         same_loc = [x for x in seniors if x["location"] == e["location"] and x["level"] <= e["level"] + 2]
         e["manager"] = rng.choice(same_loc or seniors)["id"] if seniors else None
+    by_id = {e["id"]: e for e in emps}          # the most senior managers can pick each other: break any such loop
+    for e in emps:
+        seen, x = set(), e
+        while x and x["id"] not in seen:
+            seen.add(x["id"])
+            x = by_id.get(x["manager"])
+        if x:
+            x["manager"] = None                 # this person becomes the top of the organisation
 
     # ---- data-quality issues injected on purpose (ground truth for the trust layer)
     dq = []
@@ -1012,6 +1020,22 @@ def write_outputs(emps, by_id, projects, role_rows, st, leaves, clients, skills_
     save("certification_skills", cert_skills)
     save("policies", [dict(policy_id=a, policy_name=b, rule_key=c, rule_value=d, is_hard_constraint=e, description=f)
                       for a, b, c, d, e, f in POLICIES])
+
+    # people report to the manager of their project: biggest allocation today, else next project, else last project
+    managers = {e["id"] for e in emps if e["family"] == "pm" and e["level"] >= 4 and e["status"] == "Active"}
+    mine = {}
+    for a in st.assignments:
+        if a["status"] != "Cancelled" and a["proj"]["pm_id"] in managers and a["proj"]["pm_id"] != a["employee_id"]:
+            mine.setdefault(a["employee_id"], []).append(a)
+    for e in emps:
+        rows = mine.get(e["id"])
+        if e["status"] == "Exited" or e["id"] in managers or not rows:
+            continue
+        now = [a for a in rows if a["start"] <= TODAY <= a["end"]]
+        ahead = [a for a in rows if a["end"] >= TODAY]
+        pick = (max(now, key=lambda a: (a["allocation_pct"], a["start"])) if now else
+                min(ahead, key=lambda a: a["start"]) if ahead else max(rows, key=lambda a: a["end"]))
+        e["manager"] = pick["proj"]["pm_id"]
 
     emp_rows, sens_rows, skill_rows, cert_rows = [], [], [], []
     for e in emps:
@@ -1135,14 +1159,16 @@ def write_outputs(emps, by_id, projects, role_rows, st, leaves, clients, skills_
     users = []
     for e in emps:
         if e["family"] == "pm" and e["level"] >= 4 and e["status"] == "Active":
-            users.append(dict(employee_id=e["id"], full_name=e["full_name"], email=e["email"], app_role="manager"))
+            users.append(dict(employee_id=e["id"], full_name=e["full_name"], email=e["email"], app_role="manager", start_date=iso(e["join"])))
     users += [dict(employee_id=None, full_name="Rekha Menon", email=f"rekha.menon@{EMAIL_DOMAIN}", app_role="hr_admin"),
               dict(employee_id=None, full_name="Imran Qureshi", email=f"imran.qureshi@{EMAIL_DOMAIN}", app_role="hr_admin"),
-              dict(employee_id=None, full_name="Lakshmi Narayanan", email=f"lakshmi.narayanan@{EMAIL_DOMAIN}", app_role="auditor")]
+              dict(employee_id=None, full_name="Lakshmi Narayanan", email=f"lakshmi.narayanan@{EMAIL_DOMAIN}", app_role="auditor"),
+              dict(employee_id=None, full_name="Josh Peter", email=f"josh.peter@{EMAIL_DOMAIN}", app_role="admin"),
+              dict(employee_id=None, full_name="Shreya Sharma", email=f"shreya.sharma@{EMAIL_DOMAIN}", app_role="admin")]
     for i, u in enumerate(users, start=1):
         u["user_id"] = f"USR{i:03d}"
         u["is_active"] = True
-    save("app_users", users, ["user_id", "employee_id", "full_name", "email", "app_role", "is_active"])
+    save("app_users", users, ["user_id", "employee_id", "full_name", "email", "app_role", "is_active", "start_date", "end_date"])
 
     # ---- ground truth (evaluation only; never loaded into the app's model path)
     save("assignment_latent_scores", latent_rows, folder=GT)
